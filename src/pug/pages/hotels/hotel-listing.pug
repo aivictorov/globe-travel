@@ -1,0 +1,27 @@
+extends ./../../layouts/listing.pug
+
+block variables 
+    - const title = "GlobeTravel - Hotel Listing"
+
+block listing-form
+    +search-form('short', 'none', 'visible') 
+
+block listing-left
+    include ./../../blocks/listing-filters.pug 
+        block listing-filters-items
+            +filter-item('Price')
+                +dual-range()
+
+block listing-tabs
+    +tabs(
+        [
+            {title: 'Hotels', subtitle: '257 places'}, 
+            {title: 'Motels', subtitle: '51 places'}, 
+            {title: 'Resorts', subtitle: '72 places'}
+        ]
+    )
+
+block listing-cards
+    +hotel-card()
+    +hotel-card()
+    +hotel-card()

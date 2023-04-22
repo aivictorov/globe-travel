@@ -1,0 +1,65 @@
+.fall-into-travel {
+    padding-top: 80px;
+}
+
+.fall-into-travel__cards {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    column-gap: 16px;
+}
+
+.fall-into-travel-card {
+    position: relative;
+    width: 296px;
+    height: 420px;
+    border-radius: 12px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.fall-into-travel-card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    row-gap: 16px;
+    padding: 24px;
+}
+
+.fall-into-travel-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: #FFF;
+}
+
+.fall-into-travel-card__header-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.fall-into-travel-card__title {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.fall-into-travel-card__subtitle {
+    font-size: 14px;
+}
+
+// .fall-into-travel-card__header-right {}
+
+.fall-into-travel-card__price {
+    font-weight: 600;
+    font-size: 24px;
+}

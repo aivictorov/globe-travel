@@ -1,0 +1,15 @@
+//- +section-header(
+//-     'Plan your perfect trip', 
+//-     'Search Flights & Places Hire to our most popular destinations', 
+//-     'See more places'
+//- )
+
+mixin section-header(title, subtitle, btnText)
+    .section-header
+        .section-header__left
+            h2.section-header__title #{title}
+            if (subtitle && subtitle !== '')
+                .section-header__subtitle #{subtitle}
+        .section-header__right
+            if (btnText && btnText !== '')
+                .section-header__button #{btnText}

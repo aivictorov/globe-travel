@@ -1,0 +1,13 @@
+extends ./main.pug
+
+block content
+    main.sign-up
+        .container 
+            .sign-up__row 
+                .sign-up__left
+                    block sign-up-left
+
+                .sign-up__right
+                    .sign-up__logo
+                        +logo('header-inner')
+                    block sign-up-right

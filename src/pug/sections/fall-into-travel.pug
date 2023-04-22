@@ -1,0 +1,48 @@
+section.fall-into-travel
+    .container
+        +section-header(
+            'Fall into travel', 
+            'Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.', 
+            'See All'
+        )
+
+        .fall-into-travel__cards
+            -
+                var items = [
+                    {
+                        image: '01.jpg',
+                        title: 'Melbourne',
+                        subtitle: 'An amazing journey',
+                        price: '$700',
+                    },
+                    {
+                        image: '02.jpg',
+                        title: 'Paris',
+                        subtitle: 'A Paris Adventure',
+                        price: '$600',
+                    },
+                    {
+                        image: '03.jpg',
+                        title: 'London',
+                        subtitle: 'London eye adventure',
+                        price: '$350',
+                    },
+                    {
+                        image: '04.jpg',
+                        title: 'Columbia',
+                        subtitle: 'Amazing streets',
+                        price: '$700',
+                    }
+                ]
+
+            each item in items
+                .fall-into-travel-card
+                    img(src="./../../img/fall-into-travel/" + item.image, alt= item.title)    
+                    .fall-into-travel-card__content
+                        .fall-into-travel-card__header
+                            .fall-into-travel-card__header-left
+                                .fall-into-travel-card__title #{item.title}
+                                .fall-into-travel-card__subtitle #{item.subtitle}
+                            .fall-into-travel-card__header-right
+                                .fall-into-travel-card__price #{item.price}
+                        +button('Book flight')

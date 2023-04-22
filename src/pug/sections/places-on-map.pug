@@ -1,0 +1,87 @@
+section.places-on-map
+    .container
+        +section-header(
+            'Let\'s go places together', 
+            'Discover the latest offers and news and start planning your next trip with us.', 
+            'See All'
+        )
+
+    .places-on-map__content
+        .container
+            .places-on-map__map
+                img(src="./../../img/places-on-map/map.svg", alt="map")
+
+                -
+                    var items = [
+                        {
+                            image: '01.jpg',
+                            title: 'James Doe',
+                            subtitle: 'Boarding Pass N123',
+                            arrow: {
+                                image: 'arrow-small.svg',
+                                rotate: '90deg'
+                            },
+                            x: '180px',
+                            y: '70px'
+                        },
+                        {
+                            image: '02.jpg',
+                            title: 'James Doe',
+                            subtitle: 'Boarding Pass N123',
+                            arrow: {
+                                image: 'arrow-small.svg',
+                                rotate: '90deg'
+                            },
+                            x: '680px',
+                            y: '170px'
+                        },
+                        {
+                            image: '03.jpg',
+                            title: 'James Doe',
+                            subtitle: 'Boarding Pass N123',
+                            arrow: {
+                                image: 'arrow-small.svg',
+                                rotate: '90deg'
+                            },
+                            x: '220px',
+                            y: '320px'
+                        },
+                        {
+                            image: '04.jpg',
+                            title: 'James Doe',
+                            subtitle: 'Boarding Pass N123',
+                            arrow: {
+                                image: 'arrow-small.svg',
+                                rotate: '90deg'
+                            },
+                            x: '980px',
+                            y: '70px'
+                        },
+                        {
+                            image: '05.jpg',
+                            title: 'James Doe',
+                            subtitle: 'Boarding Pass N123',
+                            arrow: {
+                                image: 'arrow-small.svg',
+                                rotate: '90deg'
+                            },
+                            x: '980px',
+                            y: '340px'
+                        },
+                    ]
+
+                each item in items
+                    .places-on-map__label(style=`left: ${item.x}; top: ${item.y};`)
+                        .places-on-map__label-body 
+                            .places-on-map__label-image
+                                img(src="./../../img/places-on-map/" + item.image, alt= item.title)    
+                            .places-on-map__label-content
+                                .places-on-map__label-title #{item.title}
+                                .places-on-map__label-subtitle #{item.subtitle}
+                        .places-on-map__label-arrow 
+                            img(
+                                src="./../../img/places-on-map/" + item.arrow.image, 
+                                alt='arrow',
+                                style="width: 60px;"
+                            )    
+                        

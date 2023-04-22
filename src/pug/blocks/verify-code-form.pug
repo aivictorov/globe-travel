@@ -1,0 +1,13 @@
+.login-form
+    .login-form__input-group
+        .login-form__input-group-row
+            +input('Enter Code', '•••••••••••••••••••••••••', '100%', {id: '#eye-off', width: 24, height: 24})
+        
+        .login-form__input-group-row
+            span.login-form__text
+                | Didn’t receive a code? 
+                a.login-form__link(href="#!") Resend
+    
+    .login-form__button-group     
+        button.login-button(type="button")
+            | Verify

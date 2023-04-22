@@ -1,0 +1,37 @@
+section.recent-searches
+    .container
+        +section-header(
+            'Your recent searches', 
+        )
+        .recent-searches__cards 
+            -
+                var items = [
+                    {
+                        image: '01.jpg',
+                        title: 'Istanbul, Turkey',
+                        subtitle: '325 places'
+                    },
+                    {
+                        image: '02.jpg',
+                        title: 'Sydney, Australia',
+                        subtitle: '325 places'
+                    },
+                    {
+                        image: '03.jpg',
+                        title: 'Baku, Azerbaijan',
+                        subtitle: '325 places'
+                    },
+                    {
+                        image: '04.jpg',
+                        title: 'Malé, Maldives',
+                        subtitle: '325 places'
+                    }
+                ]
+
+            each item in items
+                .recent-search-card
+                    .recent-search-card__image
+                        img(src="./../../img/recent-searches/" + item.image, alt= item.title)    
+                    .recent-search-card__content
+                        .recent-search-card__title #{item.title}
+                        .recent-search-card__subtitle #{item.subtitle}

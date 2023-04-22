@@ -1,0 +1,39 @@
+//- +button('Show Filghts', '100%', {id: '#send-icon', width: 16, height: 16}, 'light', 'bold')
+
+mixin button(text, width = '', icon = '', style = '', bold = '')
+    button.button(
+        type="button", 
+        style= width != '' ? `width: ${width};` : false,
+        class= style != '' ? 'button--' + style : false,
+        class= bold != '' ? 'button--' + bold : false
+    )
+        if icon
+            .button__icon
+                svg(
+                    width= icon.width, 
+                    height= icon.height
+                )
+                    use(href= icon.id)
+        | #{text}
+
+
+//- +login-with-button({id: '#arrow-down', width: 24, height: 24})
+
+mixin login-with-button(icon)
+    button.login-with-button(type="button")
+        svg(
+            width= icon.width, 
+            height= icon.height
+        )
+            use(href= icon.id)
+
+
+//- +fav-button({id: '#arrow-down', width: 24, height: 24})
+
+mixin fav-button
+    button.fav-button(type="button")
+        svg(
+            width="20", 
+            height="21"
+        )
+            use(href="#heart-icon")

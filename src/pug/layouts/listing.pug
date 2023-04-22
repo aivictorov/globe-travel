@@ -1,0 +1,31 @@
+extends ./main.pug
+
+block content 
+
+    include ./../sections/header-inner.pug 
+
+    main.listing
+        .listing-form
+            .container
+                block listing-form
+
+        .listing-content
+            .container
+                .listing-content__row
+                    .listing-content__left
+                        block listing-left
+                    
+                    .listing-content__right
+                        
+                        .listing-content__right-wrapper
+                            block listing-tabs
+                            
+                            include ./../blocks/listing-sort.pug
+
+                            .listing-content__cards
+                                block listing-cards
+                        
+                        .listing-content__right-button
+                            +button('Show more', '100%', '', 'dark', 'bold')
+
+    include ./../sections/footer.pug

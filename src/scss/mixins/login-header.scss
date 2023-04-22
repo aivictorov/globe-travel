@@ -1,0 +1,24 @@
+.login-header {
+    margin-bottom: 48px;
+}
+
+.login-header__link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 4px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.login-header__title {
+    margin-bottom: 16px;
+    // font-family: 'Trade Gothic LT Std';
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.login-header__text {
+    font-size: 16px;
+    color: transparentize($black, calc(1 - 0.75));
+}

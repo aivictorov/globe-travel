@@ -1,0 +1,23 @@
+//- +header-nav('main')
+//- +header-nav('inner')
+
+mixin header-nav(page = 'main')
+    .header__nav(class= page==='inner' ? 'header__nav--inner-page' : false)
+        ul.header__nav-left(class= page==='inner' ? 'header__nav-left--inner-page' : false)
+            li 
+                svg(width="24", height="24")
+                    use(href="#flight-icon")
+                | Find flight 
+            li 
+                svg(width="24", height="24")
+                    use(href="#hotel-icon")
+                | Find stays 
+        +logo(`header-${page}`)
+
+        .header__nav-right
+            a.header__login-link(href="#!") Login
+            a.header__sign-up-link(
+                href="#!", 
+                class= page==='inner' ? 'header__sign-up-link--inner-page' : false
+            )
+                | Sign Up

@@ -1,0 +1,8 @@
+//- +use-svg(24, 24, '#arrow-down')
+
+mixin use-svg(width, height, icon)
+    svg(
+        width= width, 
+        height= height
+    )
+        use(href= icon)

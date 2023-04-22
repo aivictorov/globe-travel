@@ -1,0 +1,133 @@
+.flight-card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 24px 16px;
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    background-color: #FFF;
+    box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
+}
+
+.flight-card__image {
+    width: 160px;
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+.flight-card__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 80%;
+}
+
+.flight-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flight-card__rating {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.flight-card__price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    font-weight: 500;
+    font-size: 12px;
+    color: transparentize($color: $black, $amount: calc(1 - 0.75));
+
+    span {
+        font-weight: 700;
+        font-size: 24px;
+        color: $accent;
+    }
+}
+
+.flight-card__flights {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid transparentize($color: $black, $amount: calc(1 - 0.25));
+}
+
+.flight__row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    column-gap: 12px;
+}
+
+.flight__column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+
+    &:nth-child(2){
+        width: 198px;
+    }
+
+    &:nth-child(3){
+        width: 92px;
+    }   
+}
+
+.flight__checkbox {
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+}
+
+.flight__shedule {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.flight__airline {
+    font-size: 14px;
+    color: transparentize($color: $black, $amount: calc(1 - 0.4));
+}
+
+.flight__transfers {
+    font-weight: 600;
+    font-size: 14px;
+    color: transparentize($color: $black, $amount: calc(1 - 0.78));
+}
+
+.flight__duration {
+    font-weight: 600;
+    font-size: 16px;
+    color: transparentize($color: $black, $amount: calc(1 - 0.78));
+}
+
+.flight__codes {
+    font-size: 14px;
+    color: transparentize($color: $black, $amount: calc(1 - 0.4));
+    text-transform: uppercase;
+}
+
+.flight-card__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 16px;
+
+    * {
+        font-weight: 600;
+    }
+}

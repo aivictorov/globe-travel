@@ -1,0 +1,18 @@
+//- +login-header(
+        'Forgot your password?', 
+        'Don’t worry, happens to all of us. Enter your email below to recover your password',
+        {
+            text: 'Back to login',
+            link: '#!'
+        }
+    )
+
+mixin login-header(title, text, back='')
+    .login-header
+        if (back)
+            a.login-header__link(href= back.link) 
+                svg(width="24", height="24")
+                    use(href="#arrow-left")
+                | #{back.text}
+        h1.login-header__title #{title}
+        .login-header__text #{text}

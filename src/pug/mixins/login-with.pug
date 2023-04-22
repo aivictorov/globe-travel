@@ -1,0 +1,11 @@
+//- +login-with('Sign up')
+
+mixin login-with(text = 'login')
+    .login-with
+        .login-with__border 
+        .login-with__text
+            | Or #{text} with
+    .login-with__buttons-row
+        +login-with-button({id: '#facebook-icon', width: 24, height: 24})
+        +login-with-button({id: '#google-icon', width: 24, height: 24})
+        +login-with-button({id: '#apple-icon', width: 24, height: 24})

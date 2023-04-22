@@ -1,0 +1,41 @@
+.footer {
+    position: relative;
+    padding-top: calc(150px + 120px);
+}
+
+.footer__background{
+    padding-top: 220px;
+    padding-bottom: 64px;
+    background-color: $main;
+}
+
+.footer__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer__left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+.footer__right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    column-gap: 24px;
+}
+
+.footer__column {
+    width: calc((972px - 4 * 24px) / 5);
+}
+
+.footer__form-wrapper{
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}

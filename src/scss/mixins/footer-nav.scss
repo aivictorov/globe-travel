@@ -1,0 +1,22 @@
+.footer-nav__title {
+    margin-bottom: 16px;
+    // font-family: 'Trade Gothic LT Std';
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.footer-nav__list {
+    font-weight: 500;
+    font-size: 14px;
+    color: transparentize($black, calc(1 - 0.7));
+}
+
+.footer-nav__item:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.footer-nav__title {}
+
+.footer-nav__list {}
+
+.footer-nav__link {}

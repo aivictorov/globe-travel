@@ -1,0 +1,15 @@
+.login-form
+    .login-form__input-group
+        +input('Email', 'john.doe@gmail.com', '100%', '')
+        +input('Password', '•••••••••••••••••••••••••', '100%', {id: '#eye-off', width: 24, height: 24})
+        .login-form__input-group-row
+            +checkbox 
+                | Remember me
+            a.login-form__link(href="#!") Forgot Password
+    
+    .login-form__button-group     
+        button.login-button(type="button")
+                | Login
+        .login-form__sign-up-link-row
+            span.login-form__text Don’t have an account? 
+            a.login-form__link(href="#!") Sign up

@@ -1,0 +1,16 @@
+extends ./../layouts/main.pug
+
+block variables 
+    - const title = "GlobeTravel - main page"
+
+block content
+
+    include ./../sections/header.pug 
+
+    main
+
+    include ./../sections/places.pug 
+    include ./../sections/booking.pug 
+    include ./../sections/reviews.pug 
+
+    include ./../sections/footer.pug

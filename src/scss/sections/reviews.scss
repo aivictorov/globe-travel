@@ -1,0 +1,24 @@
+.reviews {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.reviews__header {}
+
+.header-left {}
+
+.reviews__title {}
+
+.reviews__subtitle {}
+
+.header-right {}
+
+.reviews__button {}
+
+.reviews__cards {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 24px;
+}

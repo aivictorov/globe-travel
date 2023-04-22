@@ -1,0 +1,28 @@
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    &:not(:last-child) {
+        padding-bottom: 32px;
+        border-bottom: 1px solid transparentize(#112211, calc(1 - 0.25))
+    }
+}
+
+.filter-item__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-item__title {
+    font-weight: 600;
+    font-size: 16px;
+    color: $black;
+}
+
+.filter-item__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}

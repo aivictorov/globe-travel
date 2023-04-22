@@ -1,0 +1,16 @@
+//- +tabs(
+//-     [
+//-         {title: 'Hotels', subtitle: '257 places'}, 
+//-         {title: 'Motels', subtitle: '51 places'}, 
+//-         {title: 'Resorts', subtitle: '72 places'}
+//-     ]
+//- )
+
+mixin tabs(items)
+
+    ul.tabs
+        each item in items
+            li.tabs-item(style=`width: calc(100% / ${items.length});`) 
+                .tabs-item__title #{item.title}
+                if (item.subtitle)
+                    .tabs-item__subtitle #{item.subtitle}

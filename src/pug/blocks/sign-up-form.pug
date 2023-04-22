@@ -1,0 +1,30 @@
+.login-form
+    .login-form__input-group
+
+        .login-form__input-group-row
+            +input('First Name', 'John', '308px', '')
+            +input('Last Name', 'Doe', '308px', '')
+
+        .login-form__input-group-row
+            +input('Email', 'john.doe@gmail.com', '308px', '')
+            +input('Phone Number', '+79991234567', '308px', '')
+
+        .login-form__input-group-row
+            +input('Password', '•••••••••••••••••••••••••', '100%', {id: '#eye-off', width: 24, height: 24})
+
+        .login-form__input-group-row
+            +input('Confirm Password', '•••••••••••••••••••••••••', '100%', {id: '#eye-off', width: 24, height: 24})
+
+        .login-form__input-group-row
+            +checkbox()
+                | I agree to all the 
+                a.login-form__link(href="#!") Terms 
+                |  and 
+                a.login-form__link(href="#!") Privacy Policies
+                        
+    .login-form__button-group     
+        button.login-button(type="button")
+            | Login
+        .login-form__sign-up-link-row
+            span.login-form__text Don’t have an account? 
+            a.login-form__link(href="#!") Sign up

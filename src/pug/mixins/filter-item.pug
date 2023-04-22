@@ -1,0 +1,9 @@
+//- +filter-item(Airlines)
+mixin filter-item(title)
+    .filter-item
+        .filter-item__header
+            h4.filter-item__title #{title}
+            svg(width="24", height="24")
+                use(href="#arrow-down")
+        .filter-item__content
+            block

@@ -1,0 +1,72 @@
+.places-on-map {
+    padding-top: 80px;
+}
+
+.places-on-map__content {
+    background-color: $main;
+}
+
+.places-on-map__map {
+    position: relative;
+    width: 100%;
+    height: 486px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.places-on-map__label {
+    position: absolute;
+    // top: 100px;
+    // left: 100px;
+}
+
+.places-on-map__label-body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 8px;
+    padding: 4px;
+    width: 141px;
+    height: 48px;
+    border-radius: 4px;
+    background: #FFF;
+}
+
+.places-on-map__label-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.places-on-map__label-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.places-on-map__label-title {
+    // font-family: 'Trade Gothic LT Std';
+    font-weight: 700;
+    font-size: 10px;
+}
+
+.places-on-map__label-subtitle {
+    font-size: 8px;
+}
+
+.places-on-map__label-arrow {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translate(0, 100%);
+}

@@ -1,0 +1,103 @@
+//- +search-form('full', visible, hidden)
+//- +search-form('full', visible, none)
+//- +search-form('short', visible, none)
+
+mixin search-form(design, flights = 'visible', hotels)
+    .search-form(class= design === 'full' ? 'search-form--full' : false)
+
+        //- form heading
+        if (design === 'full')
+            if (flights !== 'none' && hotels !== 'none')
+                .search-form__tabs
+                    a.search-form__link(href="#!") 
+                        svg(width="24", height="24")
+                            use(href="#flight-icon")
+                        | Flights
+                    a.search-form__link(href="#!") 
+                        svg(width="24", height="24")
+                            use(href="#hotel-icon")
+                        | Stays
+            else
+                .search-form__title
+                    | Where are you flying? 
+
+        //- form fields for flights
+        if (flights !== 'none')
+
+            if (design === 'full')
+                - var inputWidth = 'calc((100% - 140px - 3 * 24px) / 3)'
+            else if (design === 'short')
+                - var inputWidth = 'calc((100% - 140px - 56px - 4 * 24px) / 3)'
+
+            .search-form__fields
+                +input(
+                    'From - To', 
+                    'Lahore - Karachi', 
+                    inputWidth, 
+                    {id: '#swap-icon', width: 24, height: 24}
+                )
+                +input(
+                    'Trip', 
+                    'Return', 
+                    '140px', 
+                    {id: '#arrow-down', width: 24, height: 24}
+                )
+                +input(
+                    'Depart - Return', '07 Nov 22 - 13 Nov 22', 
+                    'calc((100% - 140px - 3 * 24px) / 3)' 
+                )
+                +input(
+                    'Passenger - Class', 
+                    '1 Passenger, Economy', 
+                    'calc((100% - 140px - 3 * 24px) / 3)' 
+                )
+                if (design === 'short')
+                    .block(style="width: 56px; height: 56px; background-color: #000;")
+            
+        //- form fields for hotels
+        if (hotels !== 'none')
+
+            if (design === 'full')
+                - var inputWidth = 'calc(100% - 3 * 240px - 3 * 16px)'
+            else if (design === 'short')
+                - var inputWidth = 'calc(100% - 3 * 240px - 3 * 16px - 56px)'
+
+            .search-form__fields
+                +input(
+                    'Enter Destination', 
+                    'Istanbul, Turkey', 
+                    inputWidth
+                )
+                +input(
+                    'Check In', 
+                    'Fri 12/2', 
+                    '240px', 
+                    {id: '#arrow-down', width: 24, height: 24}
+                )
+                +input(
+                    'Check Out', 
+                    'Sun 12/4', 
+                    '240px', 
+                    {id: '#arrow-down', width: 24, height: 24}
+                )
+                +input(
+                    'Rooms & Guests', 
+                    '1 room, 2 guests', 
+                    '240px'
+                )
+                if (design === 'short')
+                    .block(style="width: 56px; height: 56px; background-color: #000;")
+
+        //- form buttons
+        if (design === 'full')
+            .search-form__buttons 
+                button.search-form__add-button(type="button") 
+                    svg(width="16", height="16")
+                        use(href="#add-icon")
+                    | Add Promo Code
+
+                if (flights !== 'none')    
+                    +button('Show Filghts', '', {id: '#send-icon', width: 16, height: 16})
+
+                if (hotels !== 'none')    
+                    +button('Show Places', '', {id: '#send-icon', width: 16, height: 16})

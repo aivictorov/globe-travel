@@ -1,0 +1,59 @@
+.listing-form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.listing-content {
+    padding-top: 20px;
+}
+
+.listing-content__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.listing-content__left {
+    padding-right: 24px;
+    width: 30%;
+}
+
+.listing-content__right {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    padding-left: 24px;
+    width: 70%;
+}
+
+.listing-content__right-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    padding-left: 24px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 0.5px;
+        background-color: transparentize($color: $black, $amount: calc(1 - 0.25));
+    }
+}
+
+.listing-content__cards {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+
+.listing-content__right-button {
+    padding-left: 24px;
+
+    * {
+        width: 100%;
+    }
+}

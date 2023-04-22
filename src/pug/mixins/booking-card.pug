@@ -1,0 +1,6 @@
+mixin booking-card(classname, title, text, buttonText, link)
+    .booking-card(class= "booking-card--" + classname)
+        .booking-card__title #{title}
+        .booking-card__text #{text}
+        .booking-card__button
+            +button(buttonText) 

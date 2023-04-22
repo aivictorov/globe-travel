@@ -1,0 +1,93 @@
+/* Base styles */
+
+html {
+	min-height: 100vh;
+	/* sticky footer */
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100vh;
+	/* sticky footer */
+	display: flex;
+	/* sticky footer */
+	flex-direction: column;
+	/* sticky footer */
+
+	background-color: $background;
+
+	overflow-x: hidden;
+	
+	font-family: $montserrat;
+	color: $black;
+	font-size: 14px;
+	line-height: 1.2;
+
+	text-rendering: optimizeSpeed;
+	//text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body>* {
+	flex-shrink: 0;
+	/* sticky footer */
+}
+
+/* Grid styles */
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 100%;
+	max-width: 1262px;
+}
+
+.container-right {
+	margin-left: calc((100% - 1262px) / 2);
+	padding-left: 15px;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+
+.bg-wrapper {
+	max-width: 1440px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+/* Utility */
+
+.none {
+	display: none !important;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.visually-hidden {
+	opacity: 0;
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+	display: block;
+	margin-left: -10000px;
+	background: transparent;
+	font-size: 0;
+}
+
+/* Sticky Footer */
+
+.footer {
+	margin-top: auto;
+	/* sticky footer */
+}

@@ -1,0 +1,58 @@
+footer.footer
+    .footer__background
+        .container
+            .footer__row 
+                .footer__left 
+                    +logo('footer')
+                    .footer__social-icons
+                        include ./../blocks/social-icons
+                .footer__right 
+                    .footer__column
+                        +footer-nav(
+                            'Our Destinations', 
+                            [
+                                {title: 'Canada', link: '#!'}, 
+                                {title: 'Alaska', link: '#!'},  
+                                {title: 'France', link: '#!'}, 
+                                {title: 'Iceland', link: '#!'}, 
+                            ]
+                        )
+                    .footer__column
+                        +footer-nav(
+                            'Our Activities', 
+                            [
+                                {title: 'Northern Lights', link: '#!'}, 
+                                {title: 'Cruising & sailing', link: '#!'},  
+                                {title: 'Multi-activities', link: '#!'}, 
+                                {title: 'Kayaing', link: '#!'}, 
+                            ]
+                        )
+                    .footer__column
+                        +footer-nav(
+                            'Travel Blogs', 
+                            [
+                                {title: 'Bali Travel Guide', link: '#!'}, 
+                                {title: 'Sri Lanks Travel Guide', link: '#!'},  
+                                {title: 'Peru Travel Guide', link: '#!'}, 
+                                {title: 'Bali Travel Guide', link: '#!'}, 
+                            ]
+                        )
+                    .footer__column
+                        +footer-nav(
+                            'About Us', 
+                            [
+                                {title: 'Our Story', link: '#!'}, 
+                                {title: 'Work with us', link: '#!'},  
+                            ]
+                        )
+                    .footer__column
+                        +footer-nav(
+                            'Contact Us', 
+                            [
+                                {title: 'Our Story', link: '#!'}, 
+                                {title: 'Work with us', link: '#!'},  
+                            ]
+                        )
+    .footer__form-wrapper
+        .container
+            include ./../blocks/subscribe-form

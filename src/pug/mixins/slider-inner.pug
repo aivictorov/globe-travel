@@ -1,0 +1,21 @@
+//- +slider-inner(
+//-     'Make your travel whishlist, we’ll do the rest', 
+//-     'Special offers to suit your plan'
+//- )
+//-         block slider-inner-background
+//-             img(src="./../../../img/hotels/hotel-search-bg.jpg", alt="hotels")
+        
+//-         block slider-inner-form
+//-             +search-form('full', 'none', 'visible')
+
+mixin slider-inner(title, text)
+    .slider-inner
+        .slider-inner__background
+            block slider-inner-background
+        .container
+            .slider-inner__content
+                h1.slider-inner__title #{title}
+                .slider-inner__text #{text}
+        .slider-inner__form-wrapper
+            .container
+                block slider-inner-form

@@ -1,0 +1,15 @@
+.listing-sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.listing-sort__left a {
+    color: $accent;
+}
+
+.listing-sort__right span {
+    font-weight: 400;
+}

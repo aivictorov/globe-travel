@@ -1,0 +1,13 @@
+extends ./main.pug
+
+block content
+    main.login
+        .container 
+            .login__row 
+                .login__left
+                    .login__logo
+                        +logo('header-inner')
+                    block login-left
+
+                .login__right
+                    block login-right

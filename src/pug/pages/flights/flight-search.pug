@@ -1,0 +1,25 @@
+extends ./../../layouts/main.pug
+
+block variables 
+    - const title = "GlobeTravel - Flight Search"
+
+block content 
+
+    include ./../../sections/header-inner.pug 
+
+    main
+        +slider-inner(
+            'Make your travel whishlist, we’ll do the rest', 
+            'Special offers to suit your plan'
+        )
+                block slider-inner-background
+                    img(src="./../../../img/flights/flight-search-bg.jpg", alt="flights")
+                
+                block slider-inner-form
+                    +search-form('full', 'visible', 'none')
+
+        include ./../../sections/places-on-map.pug 
+        include ./../../sections/fall-into-travel.pug 
+        include ./../../sections/last-minute-tours.pug 
+                        
+    include ./../../sections/footer.pug 

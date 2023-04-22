@@ -1,0 +1,25 @@
+//- +flight-card()
+
+mixin hotel-card()
+    .hotel-card
+        .hotel-card__image 
+            img(src="./../../img/hotels/hotel-card.jpg", alt="hotel")
+        .hotel-card__content
+            .hotel-card__info
+                .hotel-card__info-left 
+                    .hotel-card__title
+                        | Eresin Hotels Sultanahmet - Boutique Class
+                    .hotel-card__details 
+                .hotel-card__info-right 
+                    .hotel-card__info-right 
+                        .hotel-card__price
+                            .hotel-card__price-notice starting from
+                            .hotel-card__price-accent 
+                                span $240
+                                span /night
+                            .hotel-card__price-notice excl. tax
+
+
+            .hotel-card__buttons
+                +fav-button
+                +button('View Place', '428px', '', '', 'bold')

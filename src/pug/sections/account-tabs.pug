@@ -1,0 +1,52 @@
+section.account-tabs
+    .container
+        .account-tabs__tabs-wrapper 
+            +tabs(
+                [
+                    {title: 'Account'}, 
+                    {title: 'History'}, 
+                    {title: 'Payment methods'}
+                ]
+            )
+        
+        .account-tabs__content
+            h2.account-tabs__content-title Account
+            ul.account-info
+                -
+                    var items = [
+                        {name: 'Name', value: 'John Doe', buttons: ['change']},
+                        {name: 'Email', value: 'John.doe@gmail.com', buttons: ['add', 'change']},
+                        {name: 'Password', value: '************', buttons: ['change']},
+                        {name: 'Phone number', value: '+1 000-000-0000', buttons: ['change']},
+                        {name: 'Address', value: 'St 32 main downtown, Los Angeles, California, USA', buttons: ['change']},
+                        {name: 'Date of birth', value: '01-01-1992', buttons: ['change']},
+                    ]
+
+                each item in items
+                    li.account-info__item
+                        .account-info__item-left
+                            .account-info__item-name #{item.name}
+                            .account-info__item-value #{item.value}
+                        .account-info__item-right
+                            if (item.buttons)
+                                each button in item.buttons
+                                    .account-info__change-button #{button}
+
+        .account-tabs__content
+            h2.account-tabs__content-title Payment methods
+            .account-payment
+                .account-payment__card 
+                .account-payment__add-card
+
+        .account-tabs__content
+            h2.account-tabs__content-title Tickets/Bookings
+            .account-bookings
+                +tabs(
+                    [
+                        {title: 'Flights'},
+                        {title: 'Stays'}
+                    ]
+                )
+                +account-booking-card()
+                +account-booking-card()
+                +account-booking-card()

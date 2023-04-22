@@ -1,0 +1,39 @@
+//- +account-booking-card()
+
+mixin account-booking-card()
+    .account-booking-card
+        .account-booking-card__icon
+        .account-booking-card__info 
+            .account-booking-card__time
+                .account-booking-card__time-column
+                    .account-booking-time-column-title
+                        | Newark(EWR)
+                    .account-booking-time-column-value
+                        | 12:00 pm
+                .account-booking-card__time-spacer 
+                    | —
+                .account-booking-card__time-column
+                    .account-booking-time-column-title
+                        | Newark(EWR)
+                    .account-booking-time-column-value
+                        | 12:00 pm
+
+            ul.account-booking-card__features
+                -
+                    var features = [
+                        {title: 'Date', value: 'A12'}, 
+                        {title: 'Flight time', value: 'Newark(EWR)'}, 
+                        {title: 'Gate', value: 'A12'}, 
+                        {title: 'Seat no.', value: '128'}, 
+                    ]    
+
+                each feature in features
+                    li.account-booking-card__feature
+                        .account-booking-card__feature-icon
+                        .account-booking-card__feature-content
+                            .account-booking-card__feature-title #{feature.title}
+                            .account-booking-card__feature-value #{feature.value}
+
+        .account-booking-card__buttons
+            +button('Download Ticket')
+            +button('', '', {id: '#send-icon', width: 16, height: 16}, 'border', '')

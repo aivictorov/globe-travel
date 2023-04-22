@@ -1,0 +1,84 @@
+.last-minute-tours {
+    padding-top: 80px;
+}
+
+.last-minute-tours__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    column-gap: 24px;
+}
+
+.last-minute-tours__card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    padding: 24px;
+    width: 552px;
+    height: 424px;
+    border-radius: 20px;
+    background-color: $main;
+}
+
+.last-minute-tours__card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.last-minute-tours__card-title {
+    max-width: 300px;
+    // font-family: 'Trade Gothic LT Std';
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.last-minute-tours__card-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 4px;
+    padding: 8px;
+    background-color: #FFF;
+    border-radius: 8px;
+
+    span {
+        font-weight: 600;
+        font-size: 20px;
+    }
+}
+
+.last-minute-tours__card-text {
+    p+p {
+        margin-top: 8px;
+    }
+}
+
+.last-minute-tours__card-button {
+    margin-top: auto;
+}
+
+.last-minute-tours__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    column-gap: 20px;
+    row-gap: 24px;
+    width: 656px;
+    height: 424px;
+}
+
+.last-minute-tours__image {
+    width: 318px;
+    height: 200px;
+    border: 2px solid #8DD3BB;
+    border-radius: 12px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

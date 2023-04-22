@@ -1,0 +1,13 @@
+mixin place-card(title, img, link)
+    .place-card
+        .place-card__image
+            img(src="./img/places/" + img, alt= title)
+        .place-card__content
+            .place-card__title #{title}
+            .place-card__links
+                a.place-card__link(href= link) Flights
+                |•
+                a.place-card__link(href= link) Hotels
+                |•
+                a.place-card__link(href= link) Resorts
+

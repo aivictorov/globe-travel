@@ -1,0 +1,18 @@
+extends ./../../layouts/login.pug
+
+block variables 
+    - const title = "GlobeTravel - Verify Code"
+
+block login-left
+    +login-header(
+        'Verify code', 
+        'An authentication code has been sent to your email.',
+        {
+            text: 'Back to login',
+            link: '#!'
+        }
+    )
+    include ./../../blocks/verify-code-form.pug
+
+block login-right
+    include ./../../blocks/login-slider.pug

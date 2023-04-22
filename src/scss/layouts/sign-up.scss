@@ -1,0 +1,23 @@
+.sign-up {
+    padding-top: 104px;
+    padding-bottom: 104px;
+}
+
+.sign-up__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: 104px;
+}
+
+.sign-up__left {
+    width: 488px;
+}
+
+.sign-up__logo {
+    margin-bottom: 64px;
+}
+
+.sign-up__right {
+    width: 640px;
+}

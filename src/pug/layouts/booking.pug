@@ -1,0 +1,19 @@
+extends ./main.pug
+
+block content
+
+    include ./../sections/header-inner.pug 
+
+    main.booking 
+        .container
+            .booking__nav 
+                block booking-nav 
+            
+            .booking__row
+                .booking__left
+                    block booking-left
+
+                .booking__right
+                    block booking-right
+    
+    include ./../sections/footer.pug 
