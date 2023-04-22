@@ -18,6 +18,12 @@
     height: 80px;
     border: 0.5px solid $main;
     border-radius: 8px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 }
 
 .account-booking-card__info {
@@ -33,7 +39,6 @@
         border-right: 1px solid #D7E2EE;
     }
 }
-
 
 .account-booking-card__time {
     display: flex;
@@ -59,7 +64,6 @@
     font-size: 20px;
 }
 
-
 .account-booking-card__features {
     display: flex;
     flex-wrap: wrap;
@@ -77,6 +81,9 @@
 }
 
 .account-booking-card__feature-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 32px;
     height: 32px;
     background-color: #EBF6F2;

@@ -1,0 +1,38 @@
+//- +booking-summary()
+
+mixin booking-summary()
+    .booking-summary
+        .booking-summary__object
+            .booking-summary__object-image 
+                img(src="./../../img/hotels/hotel.jpg", alt="hotel")
+            .booking-summary__object-info 
+                .booking-summary__object-header 
+                    .booking-summary__object-title 
+                        | CVK Park Bosphorus
+                    .booking-summary__object-subtitle
+                        | Superior room - 1 double bed or 2 twin beds
+                .booking-summary__object-rating
+                    | 4.2 Very Good 54 reviews
+        .booking-summary__protected
+            | Your booking is protected by #[strong golobe]
+        .booking-summary__details
+            .booking-summary__title
+                | Price Details
+            -
+                var items = 
+                [
+                    {title: 'Base Fare', price: '$240'}, 
+                    {title: 'Discount', price: '$0'}, 
+                    {title: 'Taxes', price: '$20'}, 
+                    {title: 'Service Fee', price: '$5'}, 
+
+                ]
+            each item in items 
+                .booking-summary__item
+                    span #{item.title}
+                    span #{item.price}
+        .booking-summary__total
+            span Total 
+            span $265
+
+

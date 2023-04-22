@@ -7,6 +7,7 @@
 // Layouts
 @import "./layouts/listing";
 @import "./layouts/booking";
+@import "./layouts/details";
 @import './layouts/login';
 @import './layouts/sign-up';
 
@@ -17,6 +18,9 @@
 @import './blocks/login-slider';
 @import './blocks/listing-filters';
 @import './blocks/listing-sort';
+@import './blocks/track-nav';
+@import './blocks/booking-payment';
+@import './blocks/booking-login';
 
 // Mixins
 @import './mixins/inputs';
@@ -40,6 +44,8 @@
 @import './mixins/slider-inner';
 @import './mixins/tabs';
 @import './mixins/account-booking-card';
+@import './mixins/booking-summary';
+@import './mixins/booking-object-card';
 
 // Sections
 @import './sections/header';
@@ -56,7 +62,7 @@
 @import './sections/account-tabs';
 
 // Pages
-@import './pages/hotels/hotel-booking';
+// @import './pages/.../...';
 
 // Utils
 @import './utils/project-nav-button';

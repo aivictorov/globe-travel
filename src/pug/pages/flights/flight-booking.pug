@@ -1,15 +1,12 @@
 extends ./../../layouts/booking.pug
 
 block variables 
-    - const title = "GlobeTravel - Hotel Booking"
-
-block booking-nav
-    | NAV
+    - const title = "GlobeTravel - Flight Booking" 
 
 block booking-left
-    .hotel-booking__info Booking info
-    .hotel-booking__payment Booking payment
-    .hotel-booking__login Booking login
+    +booking-object-card()
+    include ./../../blocks/booking-payment.pug
+    include ./../../blocks/booking-login.pug
 
 block booking-right
-    .hotel-booking__summary Booking summary
+    +booking-summary()

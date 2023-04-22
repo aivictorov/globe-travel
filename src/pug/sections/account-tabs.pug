@@ -30,13 +30,30 @@ section.account-tabs
                         .account-info__item-right
                             if (item.buttons)
                                 each button in item.buttons
-                                    .account-info__change-button #{button}
+                                    if (button === 'add')
+                                        +button('Add another email', '', {id: '#send-icon', width: 16, height: 16}, 'border', '')
+                                    if (button === 'change')
+                                        +button('Change', '140px', {id: '#send-icon', width: 16, height: 16}, 'border', '')
 
         .account-tabs__content
             h2.account-tabs__content-title Payment methods
             .account-payment
                 .account-payment__card 
+                    .account-payment__card-top
+                        .account-payment__card-number
+                            span **** **** ****
+                            span 4321
+                        button.account-payment__card-delete-button
+                    .account-payment__card-bottom
+                        .account-payment__card-valid-thru
+                            span Valid Thru
+                            span 02/27
+                        .account-payment__card-logo
+
                 .account-payment__add-card
+                    .account-payment__add-card-content
+                        button.account-payment__add-card-button
+                        .account-payment__add-card-text Add a new card
 
         .account-tabs__content
             h2.account-tabs__content-title Tickets/Bookings
@@ -47,6 +64,7 @@ section.account-tabs
                         {title: 'Stays'}
                     ]
                 )
-                +account-booking-card()
-                +account-booking-card()
-                +account-booking-card()
+                - let i = 0
+                while i < 4
+                    +account-booking-card()
+                    - i++

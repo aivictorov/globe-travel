@@ -1,0 +1,23 @@
+extends ./main.pug
+
+block content
+
+    include ./../sections/header-inner.pug 
+
+    main.details 
+        .container
+            .details__nav 
+                include ./../blocks/track-nav.pug
+            
+            .details__title 
+                | TITLE
+                block details-title 
+
+            .details__content
+                .details-content__item
+                    | ITEM
+                .details-content__item
+                    | ITEM
+                block details-content
+
+    include ./../sections/footer.pug 

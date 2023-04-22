@@ -1,0 +1,11 @@
+.booking-login 
+    form.booking-login-form
+        .booking-login-form__title
+            | Login or Sign up to book
+        input(type="text", value="Phone Number").booking-login-form__input
+        .booking-login-form__notice
+            | We’ll call or text you to confirm your number. Standard message and data rates apply. 
+            a(href="#!") Privacy Policy
+        +button('Continue', '100%', '', '', '')
+    +login-with('login')
+    +button('Continue with email', '100%', {id: '#send-icon', width: 16, height: 16}, 'border', '')

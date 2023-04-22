@@ -1,0 +1,15 @@
+.track-nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.track-link{
+    font-weight: 500;
+    color: $accent;
+
+    &--active{
+        color: $black;
+    }
+}
