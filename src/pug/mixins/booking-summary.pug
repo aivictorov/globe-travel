@@ -11,8 +11,7 @@ mixin booking-summary()
                         | CVK Park Bosphorus
                     .booking-summary__object-subtitle
                         | Superior room - 1 double bed or 2 twin beds
-                .booking-summary__object-rating
-                    | 4.2 Very Good 54 reviews
+                +rating('4.2', 'Very good', {text: '54 reviews', link: '#!'})
         .booking-summary__protected
             | Your booking is protected by #[strong golobe]
         .booking-summary__details

@@ -1,51 +1,62 @@
-.hotel-details-header {
+.details-header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+
+.details-header__content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.hotel-details-header__left {
+.details-header__left {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     row-gap: 16px;
 }
 
-.hotel-details-header__main {
+.details-header__main {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     column-gap: 16px;
 }
 
-.hotel-details-header__main-title {
+.details-header__main-title {
     // font-family: 'Trade Gothic LT Std';
     font-weight: 700;
     font-size: 24px;
 }
 
-.hotel-details-header__main-rating {}
-
-.hotel-details-header__details {
+.details-header__details {
     display: flex;
     flex-direction: column;
     row-gap: 8px;
 }
 
-.hotel-details-header__details-adress {}
-
-.hotel-details-header__details-rating {}
-
-.hotel-details-header__right {
+.details-header__right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     row-gap: 16px;
 }
 
-.hotel-details-header__price {}
-
-.hotel-details-header__buttons {
+.details-header__buttons {
     display: flex;
     column-gap: 15px;
+}
+
+.details-header__image {
+    width: 100%;
+    height: 395px;
+    border-radius: 12px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }

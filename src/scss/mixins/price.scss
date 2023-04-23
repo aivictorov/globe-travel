@@ -1,0 +1,16 @@
+.price {
+    font-weight: 700;
+    color: $accent;
+}
+
+.price-value {
+    font-size: 24px;
+
+    &--big {
+        font-size: 32px;
+    }
+}
+
+.price-period {
+    font-size: 14px;
+}

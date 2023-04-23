@@ -22,6 +22,12 @@
     margin-bottom: 64px;
 }
 
+.login__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
 .login__right {
     width: 616px;
 

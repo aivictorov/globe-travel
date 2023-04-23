@@ -21,20 +21,6 @@
     font-size: 24px;
 }
 
-.booking-object-card__price {
-    font-weight: 700;
-    font-size: 32px;
-    color: $accent;
-
-    &>*:first-child {
-        font-size: 32px;
-    }
-
-    &>*:last-child {
-        font-size: 14px;
-    }
-}
-
 .booking-object-card__middle {
     display: flex;
     align-items: center;

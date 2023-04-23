@@ -1,0 +1,86 @@
+.user-droplist {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(-10px, calc(100% + 10px));
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    padding: 32px;
+    width: 329px;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+    color: $black;
+
+    &>*:not(:last-child) {
+        padding-bottom: 24px;
+        border-bottom: 0.5px solid transparentize($color: $black, $amount: calc(1 - 0.25));
+    }
+}
+
+.user-droplist__header {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.user-droplist__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.user-droplist__user {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.user-droplist__user-name {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.user-droplist__user-status {
+    font-weight: 400;
+    font-size: 14px;
+    color: transparentize($color: $black, $amount: calc(1 - 0.75));
+}
+
+.user-droplist__menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+.user-droplist__menu-item {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.user-droplist__menu-item-icon {
+    width: 18px;
+    height: 18px;
+    background-color: $main;
+}
+
+.user-droplist__menu-item-text {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.user-droplist__menu-item-arrow {
+    margin-left: auto;
+    width: 18px;
+    height: 18px;
+    background-color: $main;
+}

@@ -1,0 +1,11 @@
+//- +stars(5)
+
+mixin stars(count)
+    .stars 
+        .stars__icons
+            - let i = 0
+            while (i < count)
+                +use-svg(16, 16, '#arrow-down')
+                - i++
+        .stars__text 
+            | #{count} Star Hotel

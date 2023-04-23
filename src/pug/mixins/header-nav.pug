@@ -1,23 +1,46 @@
 //- +header-nav('main')
 //- +header-nav('inner')
 
-mixin header-nav(page = 'main')
-    .header__nav(class= page==='inner' ? 'header__nav--inner-page' : false)
-        ul.header__nav-left(class= page==='inner' ? 'header__nav-left--inner-page' : false)
-            li 
-                svg(width="24", height="24")
-                    use(href="#flight-icon")
+mixin header-nav(page = 'main', login = true)
+    .header-nav(class= page==='inner' ? 'header-nav--inner-page' : false)
+        .header-nav__left
+            a.header-nav__link(href="#!")
+                +use-svg(24, 24, '#flight-icon')
                 | Find flight 
-            li 
-                svg(width="24", height="24")
-                    use(href="#hotel-icon")
+            a.header-nav__link(href="#!")
+                +use-svg(24, 24, '#hotel-icon')
                 | Find stays 
-        +logo(`header-${page}`)
+        
+        .header-nav__right
 
-        .header__nav-right
-            a.header__login-link(href="#!") Login
-            a.header__sign-up-link(
-                href="#!", 
-                class= page==='inner' ? 'header__sign-up-link--inner-page' : false
-            )
-                | Sign Up
+            if (!login)
+                a.header-nav__link(href="#!")
+                    |Login
+                a.header-nav__sign-up(
+                    href="#!", 
+                    class= page==='inner' ? 'header-nav__sign-up--inner-page' : false
+                )
+                    | Sign Up
+
+            else
+                .header-nav__link-wrapper
+                    a(href="#!").header-nav__link
+                        +use-svg(24, 24, '#heart-icon')
+                        | Favourites
+                    span |
+
+                .header-nav__link-wrapper
+                    a(href="#!").header-nav__link
+                        .header-nav__avatar
+                            .header-nav__avatar-image
+                                img(src="./../../img/account/avatar.jpg", alt="user-avatar")
+                            .header-nav__avatar-button
+                                +use-svg(10, 10, '#arrow-down')
+                        | John D.
+
+                    include ./../blocks/user-droplist.pug
+        
+        .header-nav__logo
+            +logo(`header-${page}`)
+
+        

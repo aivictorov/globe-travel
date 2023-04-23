@@ -1,11 +1,17 @@
 //- +login-with('Sign up')
 
-mixin login-with(text = 'login')
+mixin login-with(text = 'Or login with', page = 'login')
     .login-with
-        .login-with__border 
-        .login-with__text
-            | Or #{text} with
-    .login-with__buttons-row
-        +login-with-button({id: '#facebook-icon', width: 24, height: 24})
-        +login-with-button({id: '#google-icon', width: 24, height: 24})
-        +login-with-button({id: '#apple-icon', width: 24, height: 24})
+        .login-with__header(
+            class= page === 'booking' ? 'login-with__header--booking-page' : false,
+        )
+            .login-with__text(
+                class= page === 'booking' ? 'login-with__text--booking-page' : false,
+            )
+                | #{text}
+        .login-with__buttons
+            +login-with-button('', 'calc((100% - 2 * 16px) / 3)', {id: '#facebook-icon', width: 24, height: 24})
+            +login-with-button('', 'calc((100% - 2 * 16px) / 3)', {id: '#google-icon', width: 24, height: 24})
+            +login-with-button('', 'calc((100% - 2 * 16px) / 3)', {id: '#apple-icon', width: 24, height: 24})
+            if (page === 'booking')
+                +login-with-button('Continue with email', '100%', {id: '#apple-icon', width: 24, height: 24})

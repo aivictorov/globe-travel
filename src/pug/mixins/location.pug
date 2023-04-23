@@ -1,0 +1,7 @@
+//- +location('Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437')
+
+mixin location(adress, link = '#!')
+    .location 
+        .location__icon 
+            +use-svg(18, 18, '#arrow-down')
+        a(href= link).location__link #{adress}

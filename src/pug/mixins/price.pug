@@ -1,0 +1,7 @@
+//- +price('$240', '/night', 'big')
+
+mixin price(value, period = '', size = '')
+    .price
+        span.price-value(class= size==='big' ? 'price-value--big' : false) #{value}
+        if (period !== '')
+            span.price-period #{period}

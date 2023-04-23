@@ -1,10 +1,13 @@
-// .hotel-reviews {}
+.hotel-reviews {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
 
 .hotel-reviews__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
 }
 
 .hotel-reviews__title {
@@ -13,13 +16,7 @@
     font-size: 20px;
 }
 
-.hotel-reviews__list {
-    display: flex;
-    flex-direction: column;
-    row-gap: 24px;
-}
-
-.hotel-reviews__first-item {
+.hotel-reviews__total-rating {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -44,18 +41,25 @@
     }
 }
 
+.hotel-reviews__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
 .hotel-reviews__item {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     column-gap: 16px;
+    padding-top: 24px;
+    border-top: 0.5px solid transparentize($color: $black, $amount: calc(1 - 0.25));
 
-    &:not(:last-child) {
+    &:last-child {
         padding-bottom: 24px;
         border-bottom: 0.5px solid transparentize($color: $black, $amount: calc(1 - 0.25));
     }
 }
-
 
 .hotel-reviews__item-image {
     flex-shrink: 0;
@@ -88,4 +92,17 @@
     width: 20px;
     height: 20px;
     background-color: $main;
+}
+
+.hotel-reviews__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 24px;
+
+    span {
+        width: 24px;
+        height: 24px;
+        background-color: $main;
+    }
 }

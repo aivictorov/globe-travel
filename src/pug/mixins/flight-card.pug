@@ -8,11 +8,10 @@ mixin flight-card()
 
             .flight-card__header 
                 .flight-card__rating
-                    +rating-box(4.2)
-                    span 
-                        | #[strong Very good] 54 reviews
+                    +rating('4.2', 'Very good', {text: '54 reviews', link: '#!'})
                 .flight-card__price
-                    | starting from #[span $104] 
+                    | starting from 
+                    +price('$104', '', '')
 
             ul.flight-card__flights
                 li.flight__row

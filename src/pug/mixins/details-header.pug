@@ -1,0 +1,26 @@
+//- +details-header()
+
+mixin details-header(title = 'CVK Park Bosphorus Hotel Istanbul', image = '')
+    .details-header
+        .details-header__content
+            .details-header__left
+                .details-header__main
+                    .details-header__main-title #{title}
+                    +stars(5)
+                .details-header__details
+                    +location('Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437')
+                    +rating('4.2', 'Very good', {text: '54 reviews', link: '#!'})
+            .details-header__right
+                +price('$240', '/night', 'big')
+                .details-header__buttons
+                    +button('', '', {id: '#send-icon', width: 20, height: 20}, 'border', '')
+                    +button('', '', {id: '#send-icon', width: 20, height: 20}, 'border', '')
+                    +button('Book now', '150px', '', '', 'bold')
+        if (image !== '')
+            .details-header__image
+                img(src="./../../img/flights/details-image.jpg", alt= title)
+    
+    
+    
+    
+    

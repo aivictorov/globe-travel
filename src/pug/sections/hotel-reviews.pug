@@ -3,15 +3,15 @@ section.hotel-reviews
         h2.hotel-reviews__title Reviews
         +button('Give your review', '', '', '', 'bold')
 
-    ul.hotel-reviews__list
-        li.hotel-reviews__first-item
-            .hotel-reviews__total-rating-number
-                | 4.2
-            .hotel-reviews__total-rating-description
-            .hotel-reviews__total-rating-description
-                span Very good
-                span 371 verified reviews
+    .hotel-reviews__total-rating
+        .hotel-reviews__total-rating-number
+            | 4.2
+        .hotel-reviews__total-rating-description
+        .hotel-reviews__total-rating-description
+            span Very good
+            span 371 verified reviews
 
+    ul.hotel-reviews__list
         -
             var items = [
                 {
@@ -42,3 +42,7 @@ section.hotel-reviews
                     .hotel-reviews__item-text #{item.text}
                 .hotel-reviews__item-flag
 
+    .hotel-reviews__pagination
+        span
+        | 1 of 40
+        span

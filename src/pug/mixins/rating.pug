@@ -1,0 +1,8 @@
+//- +rating('4.2', 'Very good', {text: '54 reviews', link: '#!'})
+
+mixin rating(value, text, link)
+    .rating 
+        .rating__value #{value}
+        span.rating__text
+            strong #{text}
+        a.rating__link(href= link.link) #{link.text}

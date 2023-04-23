@@ -12,6 +12,36 @@ block listing-left
             +filter-item('Price')
                 +dual-range()
 
+            +filter-item('Rating')
+                | tabs
+
+            +filter-item('Freebies')
+                -
+                    var items = 
+                        [
+                            'Free breakfast', 
+                            'Free parking', 
+                            'Free internet', 
+                            'Free airport shuttle', 
+                            'Free cancellation'
+                        ]
+                each item in items
+                    +checkbox 
+                        | #{item}
+
+            +filter-item('Amenities')
+                -
+                    var items = 
+                        [
+                            '24hr front desk', 
+                            'Air-conditioned', 
+                            'Fitness', 
+                            'Pool'
+                        ]
+                each item in items
+                    +checkbox 
+                        | #{item}
+
 block listing-tabs
     +tabs(
         [

@@ -1,4 +1,4 @@
-.header__nav {
+.header-nav {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -9,42 +9,44 @@
     color: #FFF;
     z-index: 9;
 
+    svg {
+        fill: #FFF;
+    }
+
     &--inner-page {
         padding-left: 0;
         padding-right: 0;
         color: #000;
-    }
-}
-
-.header__nav-left,
-.header__nav-right {
-    display: flex;
-    align-items: center;
-    column-gap: 32px;
-}
-
-.header__nav-left {
-    li {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        column-gap: 4px;
 
         svg {
-            fill: #FFF;
-        }
-    }
-
-    &--inner-page {
-        li svg{
             fill: #000;
         }
     }
 }
 
-.header__nav-right {}
+.header-nav__left,
+.header-nav__right {
+    display: flex;
+    align-items: center;
+    column-gap: 32px;
+}
 
-a.header__sign-up-link {
+a.header-nav__link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 4px;
+}
+
+.header-nav__link-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 16px;
+}
+
+a.header-nav__sign-up {
     padding-left: 24px;
     padding-right: 24px;
     height: 48px;
@@ -57,4 +59,41 @@ a.header__sign-up-link {
         background-color: $black;
         color: #FFF;
     }
+}
+
+.header-nav__avatar {
+    position: relative;
+}
+
+.header-nav__avatar-image {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.header-nav__avatar-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $accent;
+}
+
+.header-nav__logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }

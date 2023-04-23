@@ -4,9 +4,7 @@ mixin booking-object-card()
     .booking-object-card 
         .booking-object-card__top 
             .booking-object-card__title Superior room - 1 double bed or 2 twin beds
-            .booking-object-card__price 
-                span $240
-                span /night
+            +price('$240', '/night', 'big')
         .booking-object-card__middle 
             .booking-object-card__image
             .booking-object-card__about

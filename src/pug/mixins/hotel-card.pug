@@ -14,9 +14,7 @@ mixin hotel-card()
                     .hotel-card__info-right 
                         .hotel-card__price
                             .hotel-card__price-notice starting from
-                            .hotel-card__price-accent 
-                                span $240
-                                span /night
+                            +price('$240', '/night', '')
                             .hotel-card__price-notice excl. tax
 
 

@@ -1,7 +1,7 @@
 .filter-item {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 16px;
 
     &:not(:last-child) {
         padding-bottom: 32px;

@@ -1,0 +1,15 @@
+.stars {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+}
+
+.stars__icons {
+    display: flex;
+    align-items: center;
+}
+
+.stars__text {
+    font-weight: 500;
+    font-size: 12px;
+}

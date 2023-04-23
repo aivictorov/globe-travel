@@ -1,8 +1,79 @@
-.dual-range{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 47px;
-    background-color: $main;
+.dual-range-input {
+	width: 100%;
+}
+
+.dual-range-input__track-wrapper {
+	position: relative;
+	height: 24px;
+
+	.dual-range-input__track {
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 2px;
+		background-color: $black;
+	}
+
+	input[type="range"] {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+
+		width: 100%;
+		background-color: transparent;
+		outline: none;
+		pointer-events: none;
+
+		// track 
+
+		&::-webkit-slider-runnable-track {
+			-webkit-appearance: none;
+			height: 6px;
+		}
+
+		&::-moz-range-track {
+			-moz-appearance: none;
+		}
+
+		// thumb 
+
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			height: 24px;
+			width: 24px;
+			border: none;
+			border-radius: 50%;
+			background-color: $main;
+			transform: translateY(calc((6px - 24px) / 2));
+			pointer-events: auto;
+			cursor: pointer;
+		}
+
+		&::-moz-range-thumb {
+			-moz-appearance: none;
+			height: 24px;
+			width: 24px;
+			border: none;
+			border-radius: 50%;
+			background-color: $main;
+			pointer-events: auto;
+			cursor: pointer;
+		}
+	}
+}
+
+.dual-range-input__values {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 8px;
+	font-weight: 500;
+	font-size: 12px;
 }

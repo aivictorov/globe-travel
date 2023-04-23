@@ -1,21 +1,27 @@
-.login-with {
+// .login-with {}
+
+.login-with__header {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 48px;
+    align-items: center;
     margin-bottom: 40px;
-}
 
-.login-with__border {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    height: 1px;
-    background-color: transparentize($black, calc(1 - 0.25));
+    &--booking-page {
+        margin-bottom: 24px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        background-color: transparentize($black, calc(1 - 0.25));
+    }
 }
 
 .login-with__text {
-    position: relative;
     text-align: center;
     padding-left: 16px;
     padding-right: 16px;
@@ -23,11 +29,17 @@
     font-size: 14px;
     color: transparentize($black, calc(1 - 0.4));
     z-index: 9;
+
+    &--booking-page {
+        background-color: #FFF;
+    }
 }
 
-.login-with__buttons-row {
+.login-with__buttons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     column-gap: 16px;
+    row-gap: 16px;
 }

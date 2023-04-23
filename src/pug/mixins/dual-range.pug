@@ -1,3 +1,12 @@
-mixin dual-range()
-    .dual-range 
-        | dual-range mixin
+//- +dual-range()
+
+mixin dual-range(firstValue = '100$', secondValue = '1500$')
+    .dual-range-input
+        .dual-range-input__track-wrapper
+            .dual-range-input__track(data-name='track')
+            input(data-name='range-1' type='range' min='0' max='3000000' value='0' step='10000')
+            input(data-name='range-2' type='range' min='0' max='3000000' value='3000000' step='10000')
+
+        .dual-range-input__values
+            span(data-name='value-1') #{firstValue}
+            span(data-name='value-2') #{secondValue}

@@ -1,0 +1,19 @@
+section.flight-features
+    .flight-features__header
+        h2.flight-features__title Basic Economy Features
+        .flight-features__checkboxes 
+            -
+                var items = [
+                    'Economy',
+                    'First Class',
+                    'Busines Class',
+                ]
+            each item in items 
+                +checkbox()
+                    | #{item}
+
+    .flight-features__gallery
+        - let i = 0
+        while (i < 9)
+            .flight-features__image
+            - i++

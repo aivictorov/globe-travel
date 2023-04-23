@@ -21,7 +21,8 @@
 @import './blocks/track-nav';
 @import './blocks/booking-payment';
 @import './blocks/booking-login';
-@import './blocks/hotel-details-header';
+@import './blocks/flight-ticket';
+@import './blocks/user-droplist';
 
 // Mixins
 @import './mixins/inputs';
@@ -40,13 +41,17 @@
 @import './mixins/dual-range'; 
 @import './mixins/flight-card'; 
 @import './mixins/hotel-card'; 
-@import './mixins/rating-box'; 
+@import './mixins/rating'; 
 @import './mixins/search-form';
 @import './mixins/slider-inner';
 @import './mixins/tabs';
 @import './mixins/account-booking-card';
 @import './mixins/booking-summary';
 @import './mixins/booking-object-card';
+@import './mixins/details-header';
+@import './mixins/price';
+@import './mixins/stars';
+@import './mixins/location';
 
 // Sections
 @import './sections/header';
@@ -67,6 +72,8 @@
 @import './sections/hotel-amenities';
 @import './sections/hotel-reviews';
 @import './sections/hotel-gallery';
+@import './sections/flight-features';
+@import './sections/flight-policies';
 
 // Pages
 // @import './pages/.../...';

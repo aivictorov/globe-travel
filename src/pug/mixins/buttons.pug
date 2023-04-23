@@ -17,16 +17,21 @@ mixin button(text, width = '', icon = '', style = '', bold = '')
         | #{text}
 
 
-//- +login-with-button({id: '#arrow-down', width: 24, height: 24})
+//- +login-with-button('', 'calc((100% - 2 * 16px) / 3)', {id: '#arrow-down', width: 24, height: 24})
 
-mixin login-with-button(icon)
-    button.login-with-button(type="button")
-        svg(
-            width= icon.width, 
-            height= icon.height
-        )
-            use(href= icon.id)
-
+mixin login-with-button(text, width = '', icon = '')
+    button.login-with-button(
+        type="button",
+        style= width != '' ? `width: ${width};` : false,
+    )
+        if icon
+            .button__icon
+                svg(
+                    width= icon.width, 
+                    height= icon.height
+                )
+                    use(href= icon.id)
+        | #{text}
 
 //- +fav-button({id: '#arrow-down', width: 24, height: 24})
 

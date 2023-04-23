@@ -1,5 +1,13 @@
-.rating-box {
-    display: inline-flex;
+.rating {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 8px;
+
+}
+
+.rating__value{
+    display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 10px;
@@ -8,6 +16,14 @@
     line-height: 32px;
     border: 1px solid #8DD3BB;
     border-radius: 4px;
+}
+
+.rating__text{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.rating__link{
     font-weight: 500;
     font-size: 12px;
 }

@@ -1,0 +1,44 @@
+// .flight-policies {}
+
+.flight-policies__background {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: transparentize($color: $main, $amount: calc(1 - 0.6));
+}
+
+.flight-policies__title {
+    // font-family: 'Trade Gothic LT Std';
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.flight-policies__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    column-gap: 16px;
+    row-gap: 16px;
+}
+
+.flight-policies__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.flight-policies__item-icon {
+    width: 24px;
+    height: 24px;
+    background-color: $main;
+}
+
+.flight-policies__item-title {
+    min-width: 500px;
+    font-weight: 500;
+    font-size: 16px;
+}

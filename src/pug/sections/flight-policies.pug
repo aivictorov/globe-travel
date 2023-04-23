@@ -1,0 +1,25 @@
+section.flight-policies
+    .flight-policies__background 
+        h2.flight-policies__title 
+                | Emirates Airlines Policies
+        -
+            var items = [
+                {
+                    icon: '',
+                    title: 'Pre-flight cleaning, installation of cabin HEPA filters.'
+                },
+                {
+                    icon: '',
+                    title: 'Pre-flight health screening questions.'
+                },
+                {
+                    icon: '',
+                    title: 'Pre-flight health screening questions.'
+                },
+            ]
+            var maxHeight = (items.length + 1) / 2 * 40
+        ul.flight-policies__list(style=`max-height: ${maxHeight}px`)
+            each item in items 
+                li.flight-policies__item
+                    .flight-policies__item-icon
+                    .flight-policies__item-title #{item.title}
