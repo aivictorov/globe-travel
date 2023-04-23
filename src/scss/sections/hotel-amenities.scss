@@ -1,0 +1,41 @@
+// .hotel-amenities {}
+
+.hotel-amenities__title {
+    margin-bottom: 32px;
+    // font-family: 'Trade Gothic LT Std';
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.hotel-amenities__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    row-gap: 24px;
+    column-gap: 300px;
+}
+
+.hotel-amenities__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.hotel-amenities__item-icon {
+    width: 24px;
+    height: 24px;
+    background-color: aquamarine;
+}
+
+.hotel-amenities__item-title {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.hotel-amenities__link {
+    font-weight: 600;
+    font-size: 16px;
+    color: $accent;
+}

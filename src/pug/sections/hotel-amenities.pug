@@ -1,0 +1,52 @@
+section.hotel-amenities 
+    h2.hotel-amenities__title Amenities
+
+    -
+        var items = [
+            {
+                icon: '',
+                title: 'Outdoor pool'
+            },
+            {
+                icon: '',
+                title: 'Fitness center'
+            },
+            {
+                icon: '',
+                title: 'Indoor pool'
+            },
+            {
+                icon: '',
+                title: 'Bar/Lounge'
+            },
+            {
+                icon: '',
+                title: 'Spa and wellness center'
+            },
+                            {
+                icon: '',
+                title: 'Free Wi-Fi'
+            },
+                            {
+                icon: '',
+                title: 'Restaurant'
+            },
+                            {
+                icon: '',
+                title: 'Tea/coffee machine'
+            },
+                            {
+                icon: '',
+                title: 'Room service'
+            }
+        ]
+
+        var maxHeight = (items.length + 1) / 2 * 48
+
+    ul.hotel-amenities__list(style=`max-height: ${maxHeight}px`)
+        each item in items 
+            li.hotel-amenities__item
+                .hotel-amenities__item-icon
+                .hotel-amenities__item-title #{item.title}
+        li.hotel-amenities__item
+            a.hotel-amenities__link(href="#!") +24 more

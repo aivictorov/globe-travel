@@ -1,0 +1,44 @@
+section.hotel-reviews 
+    .hotel-reviews__header
+        h2.hotel-reviews__title Reviews
+        +button('Give your review', '', '', '', 'bold')
+
+    ul.hotel-reviews__list
+        li.hotel-reviews__first-item
+            .hotel-reviews__total-rating-number
+                | 4.2
+            .hotel-reviews__total-rating-description
+            .hotel-reviews__total-rating-description
+                span Very good
+                span 371 verified reviews
+
+        -
+            var items = [
+                {
+                    rating: '5.0 Amazing',
+                    author: 'Kaiya Lubin',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                },
+                {
+                    rating: '5.0 Amazing',
+                    author: 'Kaiya Lubin',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                },
+                {
+                    rating: '5.0 Amazing',
+                    author: 'Kaiya Lubin',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                },
+            ]
+
+        each item in items 
+            li.hotel-reviews__item
+                .hotel-reviews__item-image
+                .hotel-reviews__item-content 
+                    .hotel-reviews__item-title
+                        .hotel-reviews__item-rating #{item.rating} 
+                        span |
+                        .hotel-reviews__item-author #{item.author}
+                    .hotel-reviews__item-text #{item.text}
+                .hotel-reviews__item-flag
+

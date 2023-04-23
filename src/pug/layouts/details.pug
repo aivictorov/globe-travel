@@ -9,15 +9,10 @@ block content
             .details__nav 
                 include ./../blocks/track-nav.pug
             
-            .details__title 
-                | TITLE
-                block details-title 
+            .details__header
+                block details-header 
 
             .details__content
-                .details-content__item
-                    | ITEM
-                .details-content__item
-                    | ITEM
                 block details-content
 
     include ./../sections/footer.pug 

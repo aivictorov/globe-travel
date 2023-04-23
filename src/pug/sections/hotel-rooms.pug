@@ -1,0 +1,30 @@
+section.hotel-rooms 
+    h2.hotel-rooms__title Available rooms
+    ul.hotel-rooms__list
+
+        -
+            var items = [
+                {
+                    title: 'Superior room - 1 double bed or 2 twin beds',
+                    price: '$240'
+                },
+                {
+                    title: 'Superior room - 1 double bed or 2 twin beds',
+                    price: '$240'
+                },
+                {
+                    title: 'Superior room - 1 double bed or 2 twin beds',
+                    price: '$240'
+                }
+            ]
+
+        each item in items 
+            li.hotel-rooms__item
+                .hotel-rooms__item-left
+                    .hotel-rooms__item-image 
+                    .hotel-rooms__item-title #{item.title}
+                .hotel-rooms__item-right
+                    .hotel-rooms__item-price 
+                        span #{item.price}
+                        | /night
+                    +button('Book now', '150px', '', '', 'bold')

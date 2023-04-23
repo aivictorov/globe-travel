@@ -21,6 +21,7 @@
 @import './blocks/track-nav';
 @import './blocks/booking-payment';
 @import './blocks/booking-login';
+@import './blocks/hotel-details-header';
 
 // Mixins
 @import './mixins/inputs';
@@ -60,6 +61,12 @@
 @import './sections/recent-searches';
 @import './sections/account-cover';
 @import './sections/account-tabs';
+@import './sections/hotel-overview';
+@import './sections/hotel-rooms';
+@import './sections/hotel-location';
+@import './sections/hotel-amenities';
+@import './sections/hotel-reviews';
+@import './sections/hotel-gallery';
 
 // Pages
 // @import './pages/.../...';

@@ -1,0 +1,25 @@
+// .hotel-location {}
+
+.hotel-location__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.hotel-location__title {
+    // font-family: 'Trade Gothic LT Std';
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.hotel-location__map {
+    margin-bottom: 8px;
+    height: 450px;
+    border-radius: 16px;
+    background-color: $main;
+}
+
+.hotel-location__adress {
+    font-weight: 500;
+}

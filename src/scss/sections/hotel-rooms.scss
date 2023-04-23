@@ -1,0 +1,58 @@
+// .hotel-rooms {}
+
+.hotel-rooms__title {
+    margin-bottom: 32px;
+    // font-family: 'Trade Gothic LT Std';
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.hotel-rooms__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+.hotel-rooms__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:not(:last-child) {
+        padding-bottom: 16px;
+        border-bottom: 0.5px solid transparentize($color: $black, $amount: calc(1 - 0.25));
+    }
+}
+
+.hotel-rooms__item-left {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.hotel-rooms__item-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: $main;
+}
+
+.hotel-rooms__item-title {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.hotel-rooms__item-right {
+    display: flex;
+    align-items: center;
+    column-gap: 64px;
+}
+
+.hotel-rooms__item-price {
+    font-weight: 600;
+    font-size: 14px;
+
+    span {
+        font-size: 24px;
+    }
+}

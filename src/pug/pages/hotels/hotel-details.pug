@@ -1,7 +1,15 @@
-extends ./../../layouts/inner.pug
+extends ./../../layouts/details.pug
 
 block variables 
     - const title = "GlobeTravel - Hotel Details"
 
-block main-content 
-    
+block details-header 
+    include ./../../blocks/hotel-details-header.pug
+
+block details-content
+    include ./../../sections/hotel-gallery.pug
+    include ./../../sections/hotel-overview.pug
+    include ./../../sections/hotel-rooms.pug
+    include ./../../sections/hotel-location.pug
+    include ./../../sections/hotel-amenities.pug
+    include ./../../sections/hotel-reviews.pug

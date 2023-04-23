@@ -1,0 +1,37 @@
+.hotel-gallery {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 8px;
+    column-gap: 8px;
+    max-height: calc(550px + 64px + 1px);
+
+    img:first-child {
+        width: 612px;
+        height: 550px;
+        object-fit: cover;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+    }
+
+    img:not(:first-child) {
+        width: 302px;
+        height: 271px;
+        object-fit: cover;
+    }
+
+    img:nth-child(4) {
+        border-top-right-radius: 12px;
+    }
+
+    img:nth-child(5) {
+        border-bottom-right-radius: 12px;
+    }
+}
+
+.hotel-gallery__button{
+    position: absolute;
+    right: 16px;
+    bottom: calc(64px + 16px);
+}
