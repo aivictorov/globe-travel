@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     row-gap: 32px;
-
     padding: 32px 24px;
     width: 100%;
     background: #FFF;
@@ -12,6 +11,12 @@
     &--full {
         padding-bottom: 48px;
     }
+}
+
+.search-form__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
 }
 
 .search-form__tabs {

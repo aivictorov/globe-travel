@@ -17,6 +17,16 @@ mixin button(text, width = '', icon = '', style = '', bold = '')
         | #{text}
 
 
+//- +square-button('48px', {id: '#send-icon', width: 16, height: 16}, 'border')
+
+mixin square-button(size = '48px', icon = {id: '#send-icon', width: 16, height: 16}, style = '')
+    button.square-button(
+        type="button", 
+        style= size != '' ? `width: ${size}; height: ${size};` : false,
+        class= style != '' ? 'square-button--' + style : false,
+    )
+        +use-svg(icon.width, icon.height, icon.id)
+
 //- +login-with-button('', 'calc((100% - 2 * 16px) / 3)', {id: '#arrow-down', width: 24, height: 24})
 
 mixin login-with-button(text, width = '', icon = '')
@@ -32,13 +42,3 @@ mixin login-with-button(text, width = '', icon = '')
                 )
                     use(href= icon.id)
         | #{text}
-
-//- +fav-button({id: '#arrow-down', width: 24, height: 24})
-
-mixin fav-button
-    button.fav-button(type="button")
-        svg(
-            width="20", 
-            height="21"
-        )
-            use(href="#heart-icon")

@@ -1,11 +1,106 @@
-.checkbox {}
+// checkbox
 
 .checkbox__label {
+    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    column-gap: 8px;
     font-weight: 500;
+
+    .checkbox__custom+.checkbox__value {
+        margin-left: 8px;
+    }
+
+    &--flight-card {
+        align-items: flex-start;
+
+        .checkbox__custom {
+            border: 2px solid transparentize($color: $black, $amount: calc(1 - 0.4));
+        }
+
+        .checkbox__custom+.checkbox__value {
+            margin-left: 12px;
+        }
+    }
 }
 
-.checkbox__input {}
+.checkbox__custom {
+    margin: 2px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $black;
+    border-radius: 3px;
+}
+
+.checkbox__hidden {
+    &:checked {
+        &+.checkbox__custom {
+            position: relative;
+            background-color: $black;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 5px;
+                height: 10px;
+                border: solid #FFF;
+                border-width: 0 2px 2px 0;
+                transform: translate(-50%, calc(-50% - 1px)) rotate(45deg);
+            }
+        }
+    }
+}
+
+// rating-filter-checkbox
+
+.rating-filter-checkbox__custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 32px;
+    line-height: 32px;
+    border: 1px solid $main;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.rating-filter-checkbox__hidden {
+    &:checked {
+        &+.rating-filter-checkbox__custom {
+            background-color: $main;
+        }
+    }
+}
+
+// fav-button
+
+.fav-checkbox__custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 14px;
+    padding-right: 14px;
+    height: 48px;
+    line-height: 48px;
+    border: 1px solid #8DD3BB;
+    border-radius: 4px;
+
+    svg {
+        stroke: #4C4850;
+        fill: transparent;
+    }
+}
+
+.fav-checkbox__hidden {
+    &:checked {
+        &+.fav-checkbox__custom svg {
+            stroke: #000;
+            fill: #000;
+        }
+    }
+}

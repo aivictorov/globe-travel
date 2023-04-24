@@ -15,7 +15,7 @@
     &:checked+.payment-radio__label {
         background-color: $main;
 
-        .payment-radio__custom {
+        .payment-radio__custom-input {
             border: 2px solid #FFF;
 
             &::after {
@@ -42,7 +42,7 @@
     border-radius: 12px;
 }
 
-.payment-radio__custom {
+.payment-radio__custom-input {
     position: absolute;
     right: 30px;
     top: 50%;

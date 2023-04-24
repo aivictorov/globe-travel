@@ -55,9 +55,9 @@
 }
 
 .hotel-card__details {
-    width: 100%;
-    height: 88px;
-    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
 }
 
 .hotel-card__price {

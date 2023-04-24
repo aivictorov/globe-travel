@@ -1,8 +1,39 @@
-//- +checkbox('Remember me')
+//- +checkbox('', 'flight-card')
 
-mixin checkbox()
+mixin checkbox(name = '', style='')
     .checkbox
-        label.checkbox__label
-            input.checkbox__input(type="checkbox") 
-            span 
+        label.checkbox__label(
+            class= style !== '' ? "checkbox__label--" + style : false
+        )
+            input.checkbox__hidden(
+                type="checkbox", 
+                class="visually-hidden",
+                name= name !== '' ? name : false
+            )
+            .checkbox__custom
+            .checkbox__value
                 block
+
+//- +rating-filter-checkbox(name = '')
+mixin rating-filter-checkbox(text, width = '40px')
+    .rating-filter-checkbox
+        label.rating-filter-checkbox__label
+            input(type="checkbox").rating-filter-checkbox__hidden.visually-hidden
+            .rating-filter-checkbox__custom(
+                style= width !== '' ? `width: ${width};` : false,
+            ) #{text}
+
+//- +fav-button({id: '#arrow-down', width: 24, height: 24})
+
+mixin fav-button(width = '48px')
+    .fav-checkbox
+        label.fav-checkbox__label
+            input.fav-checkbox__hidden(
+                type="checkbox", 
+                class="visually-hidden"
+            )
+            .fav-checkbox__custom(
+                style= width != '' ? `width: ${width};` : false,
+            )
+                svg(width='20' height='20' viewBox='0 0 20 20' stroke='#4C4850' fill='none')
+                    path(d='M13.7863 3.625C11.2504 3.625 10.0004 6.125 10.0004 6.125C10.0004 6.125 8.7504 3.625 6.21446 3.625C4.15352 3.625 2.52149 5.34922 2.5004 7.40664C2.45743 11.6773 5.88829 14.7145 9.64884 17.2668C9.75251 17.3373 9.87501 17.3751 10.0004 17.3751C10.1258 17.3751 10.2483 17.3373 10.352 17.2668C14.1121 14.7145 17.543 11.6773 17.5004 7.40664C17.4793 5.34922 15.8473 3.625 13.7863 3.625V3.625Z' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')

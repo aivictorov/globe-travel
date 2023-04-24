@@ -4,17 +4,17 @@
 mixin header-nav(page = 'main', login = true)
     .header-nav(class= page==='inner' ? 'header-nav--inner-page' : false)
         .header-nav__left
-            a.header-nav__link(href="#!")
+            a.header-nav__item(href="#!")
                 +use-svg(24, 24, '#flight-icon')
                 | Find flight 
-            a.header-nav__link(href="#!")
+            a.header-nav__item(href="#!")
                 +use-svg(24, 24, '#hotel-icon')
                 | Find stays 
         
         .header-nav__right
 
             if (!login)
-                a.header-nav__link(href="#!")
+                a.header-nav__item(href="#!")
                     |Login
                 a.header-nav__sign-up(
                     href="#!", 
@@ -23,14 +23,17 @@ mixin header-nav(page = 'main', login = true)
                     | Sign Up
 
             else
-                .header-nav__link-wrapper
-                    a(href="#!").header-nav__link
+                .header-nav__item-wrapper
+                    a(href="#!").header-nav__item
                         +use-svg(24, 24, '#heart-icon')
                         | Favourites
                     span |
 
-                .header-nav__link-wrapper
-                    a(href="#!").header-nav__link
+                .header-nav__item-wrapper
+                    button.header-nav__item(
+                        type="button",
+                        dropdown-button="user"
+                    )
                         .header-nav__avatar
                             .header-nav__avatar-image
                                 img(src="./../../img/account/avatar.jpg", alt="user-avatar")

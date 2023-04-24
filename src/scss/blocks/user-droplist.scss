@@ -3,7 +3,7 @@
     bottom: 0;
     right: 0;
     transform: translate(-10px, calc(100% + 10px));
-    display: flex;
+    display: none;
     flex-direction: column;
     row-gap: 24px;
     padding: 32px;
@@ -16,6 +16,10 @@
     &>*:not(:last-child) {
         padding-bottom: 24px;
         border-bottom: 0.5px solid transparentize($color: $black, $amount: calc(1 - 0.25));
+    }
+
+    &.active {
+        display: flex;
     }
 }
 
@@ -68,9 +72,11 @@
 }
 
 .user-droplist__menu-item-icon {
-    width: 18px;
-    height: 18px;
-    background-color: $main;
+    img {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+    }
 }
 
 .user-droplist__menu-item-text {
@@ -80,7 +86,4 @@
 
 .user-droplist__menu-item-arrow {
     margin-left: auto;
-    width: 18px;
-    height: 18px;
-    background-color: $main;
 }

@@ -1,16 +1,20 @@
 //- +tabs(
 //-     [
-//-         {title: 'Hotels', subtitle: '257 places'}, 
-//-         {title: 'Motels', subtitle: '51 places'}, 
-//-         {title: 'Resorts', subtitle: '72 places'}
+//-         {title: 'Hotels', subtitle: '257 places', tab: 'account', active: true}, 
+//-         {title: 'Motels', subtitle: '51 places', tab: 'account'}, 
+//-         {title: 'Resorts', subtitle: '72 places', tab: 'account'}, 
 //-     ]
 //- )
 
 mixin tabs(items)
-
     ul.tabs
         each item in items
-            li.tabs-item(style=`width: calc(100% / ${items.length});`) 
+            button.tabs-item(
+                type="button"
+                style=`width: calc(100% / ${items.length});`
+                tab-button = (item.tab && item.tab !== '') ? item.tab : false 
+                class = (item.active) ? 'active' : false 
+            ) 
                 .tabs-item__title #{item.title}
                 if (item.subtitle)
                     .tabs-item__subtitle #{item.subtitle}

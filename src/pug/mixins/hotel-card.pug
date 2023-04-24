@@ -9,7 +9,13 @@ mixin hotel-card()
                 .hotel-card__info-left 
                     .hotel-card__title
                         | Eresin Hotels Sultanahmet - Boutique Class
+                    
+                    
                     .hotel-card__details 
+                        +location('Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437', 'hotel-card')
+                        +stars(5)
+                        +rating('4.2', 'Very good', {text: '54 reviews', link: '#!'})
+
                 .hotel-card__info-right 
                     .hotel-card__info-right 
                         .hotel-card__price

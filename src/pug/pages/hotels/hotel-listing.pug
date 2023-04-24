@@ -12,8 +12,10 @@ block listing-left
             +filter-item('Price')
                 +dual-range()
 
-            +filter-item('Rating')
-                | tabs
+            +filter-item('Rating', 'row')
+                - var items = ['0+', '1+', '2+', '3+', '4+']
+                each item in items 
+                    +rating-filter-checkbox(item)
 
             +filter-item('Freebies')
                 -

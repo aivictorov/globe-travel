@@ -5,7 +5,6 @@ mixin flight-card()
         .flight-card__image 
             img(src="./../../img/flights/emirates.png", alt="airline logo")
         .flight-card__content
-
             .flight-card__header 
                 .flight-card__rating
                     +rating('4.2', 'Very good', {text: '54 reviews', link: '#!'})
@@ -14,38 +13,26 @@ mixin flight-card()
                     +price('$104', '', '')
 
             ul.flight-card__flights
-                li.flight__row
-                    .flight__column
-                        .flight__checkbox 
-                    .flight__column
-                        .flight__shedule 
-                            | 12:00 pm - 01:28 pm
-                        .flight__airline
-                            | Emirates
-                    .flight__column
-                        .flight__transfers
-                            | non stop
-                    .flight__column
-                        .flight__duration 
-                            | 2h 28m
-                        .flight__codes
-                            | EWR-BNA
-                li.flight__row
-                    .flight__column
-                        .flight__checkbox 
-                    .flight__column
-                        .flight__shedule 
-                            | 12:00 pm - 01:28 pm
-                        .flight__airline
-                            | Emirates
-                    .flight__column
-                        .flight__transfers
-                            | non stop
-                    .flight__column
-                        .flight__duration 
-                            | 2h 28m
-                        .flight__codes
-                            | EWR-BNA
+                - var i = 0
+                while (i < 2)
+                    li.flight__row
+                        +checkbox('', 'flight-card')    
+                            .flight__row
+                                .flight__column
+                                    .flight__shedule 
+                                        | 12:00 pm - 01:28 pm
+                                    .flight__airline
+                                        | Emirates
+                                .flight__column
+                                    .flight__transfers
+                                        | non stop
+                                .flight__column
+                                    .flight__duration 
+                                        | 2h 28m
+                                    .flight__codes
+                                        | EWR-BNA
+                    - i++
+
             .flight-card__buttons
                 +fav-button
                 +button('View Details', '536px', '', '', 'bold')

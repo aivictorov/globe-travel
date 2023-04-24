@@ -70,8 +70,9 @@ body>* {
 	display: none !important;
 }
 
-.overflow-hidden {
-	overflow: hidden;
+.no-scroll {
+	overflow-y: hidden;
+    // padding-right: 17px;
 }
 
 .visually-hidden {
@@ -80,7 +81,7 @@ body>* {
 	width: 0px;
 	height: 0px;
 	display: block;
-	margin-left: -10000px;
+	// margin-left: -10000px;
 	background: transparent;
 	font-size: 0;
 }

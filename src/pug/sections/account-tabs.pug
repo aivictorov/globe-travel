@@ -1,15 +1,17 @@
-section.account-tabs
+section.account-tabs(tabs-container)
     .container
         .account-tabs__tabs-wrapper 
             +tabs(
                 [
-                    {title: 'Account'}, 
-                    {title: 'History'}, 
-                    {title: 'Payment methods'}
+                    {title: 'Account', tab: 'account', active: true}, 
+                    {title: 'Tickets & Bookings', tab: 'bookings'},
+                    {title: 'Payment methods', tab: 'payment'}, 
                 ]
             )
         
-        .account-tabs__content
+        .account-tabs__content(
+            tab-content="account"
+        )
             h2.account-tabs__content-title Account
             ul.account-info
                 -
@@ -35,7 +37,27 @@ section.account-tabs
                                     if (button === 'change')
                                         +button('Change', '140px', {id: '#send-icon', width: 16, height: 16}, 'border', '')
 
-        .account-tabs__content
+        .account-tabs__content(
+            tab-content="bookings",
+            class="none"
+        )
+            h2.account-tabs__content-title Tickets/Bookings
+            .account-bookings
+                +tabs(
+                    [
+                        {title: 'Flights'},
+                        {title: 'Stays'}
+                    ]
+                )
+                - let i = 0
+                while i < 4
+                    +account-booking-card()
+                    - i++
+
+        .account-tabs__content(
+            tab-content="payment",
+            class="none"
+        )
             h2.account-tabs__content-title Payment methods
             .account-payment
                 .account-payment__card 
@@ -54,17 +76,3 @@ section.account-tabs
                     .account-payment__add-card-content
                         button.account-payment__add-card-button
                         .account-payment__add-card-text Add a new card
-
-        .account-tabs__content
-            h2.account-tabs__content-title Tickets/Bookings
-            .account-bookings
-                +tabs(
-                    [
-                        {title: 'Flights'},
-                        {title: 'Stays'}
-                    ]
-                )
-                - let i = 0
-                while i < 4
-                    +account-booking-card()
-                    - i++

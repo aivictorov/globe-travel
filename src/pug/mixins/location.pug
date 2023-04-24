@@ -1,7 +1,9 @@
-//- +location('Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437')
+//- +location('Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437', 'hotel-card')
 
-mixin location(adress, link = '#!')
-    .location 
+mixin location(adress, style='', link='#!')
+    .location(
+        class= style === 'hotel-card' ? 'location--' + style : false
+    ) 
         .location__icon 
             +use-svg(18, 18, '#arrow-down')
         a(href= link).location__link #{adress}

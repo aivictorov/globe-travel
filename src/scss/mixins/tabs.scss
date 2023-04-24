@@ -12,19 +12,49 @@
 }
 
 .tabs-item {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     row-gap: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-right: 1px solid #D7E2EE;
     height: 100%;
 
-    &:not(:first-child) {
-        padding-left: 24px;
+    &::after {
+        content: "";
+        display: none;
+        position: absolute;
+        bottom: -16px;
+        left: 24px;
+        width: calc(100% - 2 * 24px);
+        height: 4px;
+        background-color: $main;
     }
 
-    &:not(:last-child) {
-        padding-right: 24px;
-        border-right: 1px solid #D7E2EE;
+    &:first-child {
+        padding-left: 0;
+
+        &::after {
+            left: 0;
+            width: calc(100% - 24px);
+        }
+    }
+
+    &:last-child {
+        padding-right: 0;
+        border: none;
+
+        &::after {
+            width: calc(100% - 24px);
+        }
+    }
+
+    &.active{
+        &::after {
+            display: block;
+        }
     }
 }
 
