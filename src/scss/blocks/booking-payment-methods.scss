@@ -1,0 +1,15 @@
+.booking-payment-methods {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: #FFF;
+    box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
+}
+
+a.booking-payment-methods__link {
+    padding: 12px 16px 0;
+    font-weight: 500;
+    font-size: 12px;
+    text-decoration-line: underline;
+}

@@ -1,16 +1,17 @@
-section.account-tabs(tabs-container)
+section.account-tabs(tabs="account")
     .container
         .account-tabs__tabs-wrapper 
             +tabs(
                 [
-                    {title: 'Account', tab: 'account', active: true}, 
-                    {title: 'Tickets & Bookings', tab: 'bookings'},
-                    {title: 'Payment methods', tab: 'payment'}, 
+                    {title: 'Account', group: 'account', tab: 'account', active: true}, 
+                    {title: 'Tickets & Bookings', group: 'account', tab: 'bookings'},
+                    {title: 'Payment methods', group: 'account', tab: 'payment'}, 
                 ]
             )
         
         .account-tabs__content(
-            tab-content="account"
+            tab-content="account",
+            tab-group="account"
         )
             h2.account-tabs__content-title Account
             ul.account-info
@@ -33,29 +34,59 @@ section.account-tabs(tabs-container)
                             if (item.buttons)
                                 each button in item.buttons
                                     if (button === 'add')
-                                        +button('Add another email', '', {id: '#send-icon', width: 16, height: 16}, 'border', '')
+                                        +button('Add another email', '', {id: '#add-circle-icon', width: 16, height: 16}, 'border', '')
                                     if (button === 'change')
-                                        +button('Change', '140px', {id: '#send-icon', width: 16, height: 16}, 'border', '')
+                                        +button('Change', '140px', {id: '#edit-icon', width: 16, height: 16}, 'border', '')
 
         .account-tabs__content(
             tab-content="bookings",
-            class="none"
+            tab-group="account",
+            class="none",
+            tabs="bookings"
         )
-            h2.account-tabs__content-title Tickets/Bookings
+            h2.account-tabs__content-title 
+                | Tickets/Bookings
             .account-bookings
                 +tabs(
                     [
-                        {title: 'Flights'},
-                        {title: 'Stays'}
+                        {
+                            title: 'Flights', 
+                            icon: {width: 24, height: 24, id: '#flight-icon'}, 
+                            group: 'bookings', 
+                            tab: "flights", 
+                            active: true
+                        }, 
+                        {
+                            title: 'Stays', 
+                            icon: {width: 24, height: 24, id: '#hotel-icon'}, 
+                            group: 'bookings', 
+                            tab: "hotels", 
+                            active: false
+                        }
                     ]
                 )
-                - let i = 0
-                while i < 4
-                    +account-booking-card()
-                    - i++
+                
+                .account-bookings__content(
+                    tab-content="flights",
+                    tab-group="bookings"
+                )
+                    - let i = 0
+                    while (i < 4)
+                        +account-booking-card()
+                        - i++
 
+                .account-bookings__content(
+                    tab-content="hotels",
+                    tab-group="bookings"
+                )
+                    - let g = 0
+                    while (g < 1)
+                        +account-booking-card()
+                        - g++
+        
         .account-tabs__content(
             tab-content="payment",
+            tab-group="account",
             class="none"
         )
             h2.account-tabs__content-title Payment methods
@@ -65,14 +96,14 @@ section.account-tabs(tabs-container)
                         .account-payment__card-number
                             span **** **** ****
                             span 4321
-                        button.account-payment__card-delete-button
+                        button.account-payment__card-remove-button
+                            +use-svg(24, 24, '#remove-icon')
                     .account-payment__card-bottom
                         .account-payment__card-valid-thru
                             span Valid Thru
                             span 02/27
                         .account-payment__card-logo
+                            +use-svg(52, 52, '#visa-icon')
 
                 .account-payment__add-card
-                    .account-payment__add-card-content
-                        button.account-payment__add-card-button
-                        .account-payment__add-card-text Add a new card
+                    +add-card()

@@ -3,13 +3,13 @@ section.account-cover
         .account-cover__background
             img(src="./../../img/account/cover.jpg", alt="account-cover")
             .account-cover__upload-button
-                +button('Upload new cover', '', {id: '#send-icon', width: 16, height: 16}, '', '')
+                +button('Upload new cover', '', {id: '#upload-icon', width: 16, height: 16}, '', '')
         .account-cover__user
             .account-cover__user-avatar
                 .account-cover__user-avatar-image
                     img(src="./../../img/account/avatar.jpg", alt="user-avatar")
                 button.account-cover__user-avatar-edit-button(type="button")
-                    +use-svg(24, 24, '#arrow-down')
+                    +use-svg(24, 24, '#pen-icon')
             .account-cover__user-name
                 | John Doe
             .account-cover__user-email

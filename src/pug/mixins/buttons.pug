@@ -1,11 +1,12 @@
-//- +button('Show Filghts', '100%', {id: '#send-icon', width: 16, height: 16}, 'light', 'bold')
+//- +button('Show Filghts', '100%', {width: 16, height: 16, id: '#send-icon'}, 'light', 'bold', '40px')
 
-mixin button(text, width = '', icon = '', style = '', bold = '')
+mixin button(text, width = '', icon = '', style = '', bold = '', height = '')
     button.button(
         type="button", 
-        style= width != '' ? `width: ${width};` : false,
-        class= style != '' ? 'button--' + style : false,
-        class= bold != '' ? 'button--' + bold : false
+        style= width !== '' ? `width: ${width};` : false,
+        class= style !== '' ? 'button--' + style : false,
+        class= bold !== '' ? 'button--' + bold : false
+        class= height === '40px' ? 'button--h40' : false
     )
         if icon
             .button__icon
@@ -17,9 +18,9 @@ mixin button(text, width = '', icon = '', style = '', bold = '')
         | #{text}
 
 
-//- +square-button('48px', {id: '#send-icon', width: 16, height: 16}, 'border')
+//- +square-button('48px', {width: 16, height: 16, id: '#send-icon'}, 'border')
 
-mixin square-button(size = '48px', icon = {id: '#send-icon', width: 16, height: 16}, style = '')
+mixin square-button(size = '48px', icon = {width: 16, height: 16, id: '#send-icon'}, style = '')
     button.square-button(
         type="button", 
         style= size != '' ? `width: ${size}; height: ${size};` : false,

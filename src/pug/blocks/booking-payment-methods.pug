@@ -1,0 +1,23 @@
+.booking-payment-methods 
+    
+    +payment-radio(
+        'pay-methods', 
+        'full', 
+        '80px', 
+        true, 
+        'Pay in full', 
+        'Pay the total and you are all set',
+        false
+    )
+
+    +payment-radio(
+        'pay-methods', 
+        'part', 
+        '100px', 
+        false, 
+        'Pay part now, part later', 
+        'Pay $207.43 now, and the rest ($207.43) will be automatically charged to the same payment method on Nov 14, 2022. No extra fees.',
+        false
+    )
+
+    a.booking-payment-methods__link(href="#!") More info

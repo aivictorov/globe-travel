@@ -1,0 +1,28 @@
+//- +payment-radio(
+//-     'pay-methods', 
+//-     'full', 
+//-     '80px', 
+//-     true, 
+//-     'Pay in full', 
+//-     'Pay the total and you are all set',
+//-     false
+//- )
+//-     | custom block to replace standart
+
+mixin payment-radio(name, id, height = '80px', checked = 'false', title = '', text = '', custom = false)
+    .payment-radio(
+        style=`height: ${height};`
+    )
+        input.payment-radio__input.visually-hidden(
+            type="radio",
+            name= name, 
+            id= id, 
+            checked= checked ? '' : false
+        )
+        label.payment-radio__label(for= id)
+            if (custom)
+                block
+            else
+                .payment-radio__label-title #{title}
+                .payment-radio__label-text #{text}
+            .payment-radio__custom-input 

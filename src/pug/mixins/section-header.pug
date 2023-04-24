@@ -12,4 +12,4 @@ mixin section-header(title, subtitle, btnText)
                 .section-header__subtitle #{subtitle}
         .section-header__right
             if (btnText && btnText !== '')
-                .section-header__button #{btnText}
+                +button(btnText, '', '', 'border', '', '40px')

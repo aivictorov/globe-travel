@@ -5,7 +5,7 @@
 mixin search-form(design, flights = 'visible', hotels = 'hidden')
     .search-form(
         class= design === 'full' ? 'search-form--full' : false,
-        tabs-container
+        tabs="search"
     )
 
         //- form heading
@@ -15,12 +15,14 @@ mixin search-form(design, flights = 'visible', hotels = 'hidden')
                     button.search-form__link(
                         type="button",
                         tab-button="flight-search"
+                        tab-group="search"
                     ) 
                         +use-svg(24, 24,'#flight-icon')
                         | Flights
                     button.search-form__link(
                         type="button",
                         tab-button="hotel-search"
+                        tab-group="search"
                     ) 
                         +use-svg(24, 24,'#hotel-icon')
                         | Stays
@@ -32,6 +34,7 @@ mixin search-form(design, flights = 'visible', hotels = 'hidden')
         if (flights !== 'none')
             .search-form__content(
                 tab-content="flight-search"
+                tab-group="search"
                 class= flights === 'hidden' ? 'none' : false
             )
 
@@ -79,6 +82,7 @@ mixin search-form(design, flights = 'visible', hotels = 'hidden')
         if (hotels !== 'none')
             .search-form__content(
                 tab-content="hotel-search"
+                tab-group="search"
                 class= hotels === 'hidden' ? 'none' : false
             )
                 

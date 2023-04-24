@@ -1,20 +1,29 @@
 //- +tabs(
 //-     [
-//-         {title: 'Hotels', subtitle: '257 places', tab: 'account', active: true}, 
-//-         {title: 'Motels', subtitle: '51 places', tab: 'account'}, 
-//-         {title: 'Resorts', subtitle: '72 places', tab: 'account'}, 
+//-         {
+//-             title: 'Flights', 
+//-             icon: {width: 24, height: 24, id: '#flight-icon'}, 
+//-             group: 'bookings', 
+//-             tab: "flights", 
+//-             active: true
+//-         }, 
 //-     ]
 //- )
 
 mixin tabs(items)
     ul.tabs
         each item in items
-            button.tabs-item(
-                type="button"
-                style=`width: calc(100% / ${items.length});`
-                tab-button = (item.tab && item.tab !== '') ? item.tab : false 
+            button.tabs__item(
+                type="button",
+                style=`width: calc(100% / ${items.length});`,
+                tab-group = (item.group && item.group !== '') ? item.group : false,
+                tab-button = (item.tab && item.tab !== '') ? item.tab : false,
                 class = (item.active) ? 'active' : false 
             ) 
-                .tabs-item__title #{item.title}
-                if (item.subtitle)
-                    .tabs-item__subtitle #{item.subtitle}
+                if (item.icon)
+                    .tabs__item-icon 
+                        +use-svg(item.icon.width, item.icon.height, item.icon.id)
+                .tabs__item-content
+                    .tabs__item-title #{item.title}
+                    if (item.subtitle)
+                        .tabs__item-subtitle #{item.subtitle}

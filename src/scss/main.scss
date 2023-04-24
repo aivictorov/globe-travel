@@ -19,10 +19,11 @@
 @import './blocks/listing-filters';
 @import './blocks/listing-sort';
 @import './blocks/track-nav';
-@import './blocks/booking-payment';
 @import './blocks/booking-login';
 @import './blocks/flight-ticket';
 @import './blocks/user-droplist';
+@import './blocks/booking-payment-methods';
+@import './blocks/booking-payment-cards';
 
 // Mixins
 @import './mixins/inputs';
@@ -52,6 +53,8 @@
 @import './mixins/price';
 @import './mixins/stars';
 @import './mixins/location';
+@import './mixins/payment-radio';
+@import './mixins/add-card';
 
 // Sections
 @import './sections/header';

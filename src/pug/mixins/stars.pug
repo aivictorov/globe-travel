@@ -5,7 +5,7 @@ mixin stars(count)
         .stars__icons
             - let i = 0
             while (i < count)
-                +use-svg(16, 16, '#arrow-down')
+                +use-svg(16, 16, '#star-icon')
                 - i++
         .stars__text 
             | #{count} Star Hotel

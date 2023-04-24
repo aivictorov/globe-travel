@@ -1,0 +1,35 @@
+.booking-payment-cards
+    +payment-radio(
+        'pay-cards', 
+        'card-1', 
+        '80px', 
+        true, 
+        '', 
+        '',
+        true
+    )
+        .booking-payment-cards__custom-label 
+            .booking-payment-cards__custom-label-icon
+                +use-svg(32, 32, '#visa-icon')
+            .booking-payment-cards__custom-label-text
+                span **** 4565 
+                | 05/23
+
+    +payment-radio(
+        'pay-cards', 
+        'card-2', 
+        '80px', 
+        false, 
+        '', 
+        '',
+        true
+    )
+        .booking-payment-cards__custom-label 
+            .booking-payment-cards__custom-label-icon
+                +use-svg(32, 32, '#visa-icon')
+            .booking-payment-cards__custom-label-text
+                span **** 4321 
+                | 02/27
+
+    .booking-payment-cards__add
+        +add-card()
