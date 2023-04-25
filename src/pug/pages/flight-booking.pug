@@ -1,0 +1,26 @@
+extends ./../layouts/booking.pug
+
+block variables 
+    - const title = "GlobeTravel - Flight Booking" 
+
+block booking-left
+    +flight-ticket('booking')
+    include ./../blocks/booking-payment-methods.pug
+    include ./../blocks/booking-login.pug
+    include ./../blocks/booking-payment-cards.pug
+
+block booking-right
+    +booking-summary(
+        {
+            src: 'flights/airline-example-1/logo-image.jpg',
+            alt: 'flight'
+        },
+        'Economy',   
+        'Emirates A380 Airbus',  
+        [
+            {title: 'Base Fare', price: '$240'}, 
+            {title: 'Discount', price: '$0'}, 
+            {title: 'Taxes', price: '$20'}, 
+            {title: 'Service Fee', price: '$5'}, 
+        ],    
+    )

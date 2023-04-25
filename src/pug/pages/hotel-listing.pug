@@ -1,0 +1,72 @@
+extends ./../layouts/listing.pug
+
+block variables 
+    - const title = "GlobeTravel - Hotel Listing"
+
+block listing-form
+    +search-form('short', 'none', 'visible') 
+
+block listing-left
+    include ./../blocks/listing-filters.pug 
+        block listing-filters-items
+            +filter-item('Price')
+                +dual-range()
+
+            +filter-item('Rating', 'row')
+                - var items = ['0+', '1+', '2+', '3+', '4+']
+                each item in items 
+                    +rating-filter-checkbox(item)
+
+            +filter-item('Freebies')
+                -
+                    var items = 
+                        [
+                            'Free breakfast', 
+                            'Free parking', 
+                            'Free internet', 
+                            'Free airport shuttle', 
+                            'Free cancellation'
+                        ]
+                each item in items
+                    +checkbox 
+                        | #{item}
+
+            +filter-item('Amenities')
+                -
+                    var items = 
+                        [
+                            '24hr front desk', 
+                            'Air-conditioned', 
+                            'Fitness', 
+                            'Pool'
+                        ]
+                each item in items
+                    +checkbox 
+                        | #{item}
+
+block listing-tabs
+    +tabs(
+        [
+            {title: 'Hotels', subtitle: '257 places'}, 
+            {title: 'Motels', subtitle: '51 places'}, 
+            {title: 'Resorts', subtitle: '72 places'}
+        ]
+    )
+
+block listing-cards
+    +hotel-card(
+        'CVK Park Bosphorus Hotel Istanbul',
+        'hotels/hotel-example-1/cover.jpg'
+    )
+    +hotel-card(
+        'Eresin Hotels Sultanahmet - Boutique Class',
+        'hotels/hotel-example-2/cover.jpg'
+    )
+    +hotel-card(
+        'Eresin Hotels Sultanahmet - Boutique Class',
+        'hotels/hotel-example-3/cover.jpg'
+    )
+    +hotel-card(
+        'Eresin Hotels Sultanahmet - Boutique Class',
+        'hotels/hotel-example-4/cover.jpg'
+    )

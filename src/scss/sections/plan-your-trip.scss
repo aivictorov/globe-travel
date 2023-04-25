@@ -1,0 +1,13 @@
+.plan-your-trip {
+    padding-top: 80px;
+}
+
+.plan-your-trip__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 32px;
+    row-gap: 32px;
+}
+

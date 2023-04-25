@@ -5,14 +5,17 @@ section.hotel-rooms
         -
             var items = [
                 {
+                    image: '01.jpg',
                     title: 'Superior room - 1 double bed or 2 twin beds',
                     price: '$240'
                 },
                 {
+                    image: '02.jpg',
                     title: 'Superior room - 1 double bed or 2 twin beds',
                     price: '$240'
                 },
                 {
+                    image: '03.jpg',
                     title: 'Superior room - 1 double bed or 2 twin beds',
                     price: '$240'
                 }
@@ -21,7 +24,8 @@ section.hotel-rooms
         each item in items 
             li.hotel-rooms__item
                 .hotel-rooms__item-left
-                    .hotel-rooms__item-image 
+                    .hotel-rooms__item-image
+                        img(src="./img/hotels/hotel-example-1/rooms/" + item.image, alt="available room")
                     .hotel-rooms__item-title #{item.title}
                 .hotel-rooms__item-right
                     .hotel-rooms__item-price 

@@ -4,17 +4,18 @@ section.hotel-overview
     .hotel-overview__text
         p 
             | Located in Taksim Gmsuyu, the heart of Istanbul, the CVK Park Bosphorus Hotel Istanbul has risen from the ashes of the historic Park Hotel, which also served as Foreign Affairs Palace 120 years ago and is hosting its guests by assuming this hospitality mission. With its 452 luxurious rooms and suites, 8500 m2 SPA and fitness area, 18 meeting rooms including 4 dividable ones and 3 terraces with Bosphorus view, Istanbuls largest terrace with Bosphorus view (4500 m2) and latest technology infrastructure, CVK Park Bosphorus Hotel Istanbul is destined to be the popular attraction point of the city. Room and suite categories at various sizes with city and Bosphorus view, as well as 68 separate luxury suites, are offered to its special guests as a wide variety of selection.
-    ul.hotel-overview__badges 
-        li 
-            | 4.2
-            | Very good
-            |371 reviews
-        li 
-            | 4.2
-            | Very good
-            |371 reviews
+    ul.hotel-overview__badge-list
+        li.hotel-overview__first-badge
+            .hotel-overview__first-badge-rating 
+                | 4.2
+            .hotel-overview__first-badge-text
+                span Very good
+                span 371 reviews
+        
+        - var items = ['Near park', 'Near nightlife', 'Near theater', 'Clean Hotel']
+        each item in items 
+            li.hotel-overview__next-badge
+                .hotel-overview__next-badge-icon 
+                    +use-svg(32, 32, '#stars-icon')
+                .hotel-overview__next-badge-text #{item}
 
-//- Near park
-//- Near nightlife
-//- Near theater
-//- Clean Hotel

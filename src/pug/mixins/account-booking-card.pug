@@ -1,32 +1,56 @@
 //- +account-booking-card()
 
-mixin account-booking-card()
+mixin account-booking-card(type='flight')
     .account-booking-card
         .account-booking-card__icon
-            img(src="./../../img/account/airline-logo.jpg", alt="airline-logo")
+            if (type === 'flight')
+                img(src="./img/flights/airline-example-1/logo.png", alt="airline-logo")
+            if (type === 'hotel')
+                img(src="./img/hotels/hotel-example-1/logo.jpg", alt="hotel-logo")
+
         .account-booking-card__info 
             .account-booking-card__time
                 .account-booking-card__time-column
                     .account-booking-time-column-title
-                        | Newark(EWR)
+                        if (type === 'flight')
+                            | Newark(EWR)
+                        if (type === 'hotel')
+                            | Check-in
                     .account-booking-time-column-value
-                        | 12:00 pm
+                        if (type === 'flight')
+                            | 12:00 pm
+                        if (type === 'hotel')
+                            | Thur, Dec 8
                 .account-booking-card__time-spacer 
                     | —
                 .account-booking-card__time-column
                     .account-booking-time-column-title
-                        | Newark(EWR)
+                        if (type === 'flight')
+                            | Newark(EWR)
+                        if (type === 'hotel')
+                            | Check-out
                     .account-booking-time-column-value
-                        | 12:00 pm
+                        if (type === 'flight')
+                            | 12:00 pm
+                        if (type === 'hotel')
+                            | Fri, Dec 9
 
             ul.account-booking-card__features
-                -
-                    var features = [
-                        {title: 'Date', value: 'A12', icon: 'calendar.svg'}, 
-                        {title: 'Flight time', value: 'Newark(EWR)', icon: 'time.svg'}, 
-                        {title: 'Gate', value: 'A12', icon: 'gate.svg'}, 
-                        {title: 'Seat no.', value: '128', icon: 'seat.svg'}, 
-                    ]    
+                if (type === 'flight')
+                    -
+                        var features = [
+                            {title: 'Date', value: 'A12', icon: 'calendar.svg'}, 
+                            {title: 'Flight time', value: 'Newark(EWR)', icon: 'time.svg'}, 
+                            {title: 'Gate', value: 'A12', icon: 'gate.svg'}, 
+                            {title: 'Seat no.', value: '128', icon: 'seat.svg'}, 
+                        ]    
+                if (type === 'hotel')
+                    -
+                        var features = [
+                            {title: 'Check-In', value: '12:00pm', icon: 'time.svg'}, 
+                            {title: 'Check-Out', value: '11:30am', icon: 'time.svg'}, 
+                            {title: 'Room №', value: 'On arrival', icon: 'seat.svg'}, 
+                        ]                  
 
                 each feature in features
                     li.account-booking-card__feature

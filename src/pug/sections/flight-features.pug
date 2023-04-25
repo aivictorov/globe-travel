@@ -13,7 +13,18 @@ section.flight-features
                     | #{item}
 
     .flight-features__gallery
-        - let i = 0
-        while (i < 9)
+        -
+            var images = [
+                '01.jpg',
+                '02.jpg',
+                '03.jpg',
+                '04.jpg',
+                '05.jpg',
+                '06.jpg',
+                '07.jpg',
+                '08.jpg',
+                '09.jpg',
+            ]
+        each image in images 
             .flight-features__image
-            - i++
+                img(src="./img/flights/airline-example-1/gallery/" + image, alt="flight feature")

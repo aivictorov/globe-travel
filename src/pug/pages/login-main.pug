@@ -1,0 +1,15 @@
+extends ./../layouts/login.pug
+
+block variables 
+    - const title = "GlobeTravel - Login index"
+
+block login-left
+    +login-header(
+        'Login', 
+        'Login to access your Golobe account'
+    )
+    include ./../blocks/login-form.pug
+    +login-with()
+
+block login-right
+    include ./../blocks/login-slider.pug

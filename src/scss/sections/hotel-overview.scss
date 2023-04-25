@@ -18,25 +18,65 @@
     }
 }
 
-.hotel-overview__badges {
+.hotel-overview__badge-list {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     column-gap: 16px;
+}
 
-    li {
-        padding: 16px;
-        width: 160px;
-        height: 145px;
-        border-radius: 12px;
+.hotel-overview__first-badge {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    width: 160px;
+    height: 145px;
+    border-radius: 12px;
+    background-color: $main;
+}
+
+.hotel-overview__first-badge-rating {
+    // font-family: 'Trade Gothic LT Std';
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.hotel-overview__first-badge-text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+
+    &>*:first-child {
+        font-weight: 700;
+        font-size: 16px;
     }
 
-    li:first-child {
-        background-color: $main;
+    &>*:last-child {
+        font-weight: 500;
+        font-size: 14px;
     }
+}
 
-    li:not(:first-child) {
-        background-color: transparent;
-        border: 1px solid $main;
-    }
+.hotel-overview__next-badge {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    width: 160px;
+    height: 145px;
+    border-radius: 12px;
+    background-color: transparent;
+    border: 1px solid $main;
+}
+
+.hotel-overview__next-badge-icon {
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+}
+
+.hotel-overview__next-badge-text {
+    font-weight: 500;
+    font-size: 16px;
 }

@@ -5,5 +5,5 @@ mixin location(adress, style='', link='#!')
         class= style === 'hotel-card' ? 'location--' + style : false
     ) 
         .location__icon 
-            +use-svg(18, 18, '#arrow-down')
+            +use-svg(18, 18, '#location')
         a(href= link).location__link #{adress}

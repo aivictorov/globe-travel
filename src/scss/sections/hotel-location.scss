@@ -15,7 +15,11 @@
 
 .hotel-location__map {
     margin-bottom: 8px;
+    width: 100%;
     height: 450px;
     border-radius: 16px;
-    background-color: $main;
+
+    img {
+        @include image-fit(cover);
+    }
 }

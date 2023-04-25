@@ -67,7 +67,7 @@ mixin search-form(design, flights = 'visible', hotels = 'hidden')
                         'calc((100% - 140px - 3 * 24px) / 3)' 
                     )
                     if (design === 'short')
-                        +square-button('56px', {id: '#send-icon', width: 24, height: 24}, '')
+                        +square-button('56px', {width: 24, height: 24, id: '#search-icon'}, '')
 
                 //- flight form buttons
                 if (design === 'full')
@@ -76,7 +76,7 @@ mixin search-form(design, flights = 'visible', hotels = 'hidden')
                             +use-svg(16, 16, "#add-icon")
                             | Add Promo Code
 
-                        +button('Show Filghts', '', {id: '#send-icon', width: 16, height: 16})
+                        +button('Show Filghts', '', {width: 16, height: 16, id: '#send-icon'})
 
         //- hotel form content 
         if (hotels !== 'none')
@@ -116,7 +116,7 @@ mixin search-form(design, flights = 'visible', hotels = 'hidden')
                         '240px'
                     )
                     if (design === 'short')
-                        +square-button('56px', {id: '#send-icon', width: 24, height: 24}, '')
+                        +square-button('56px', {width: 24, height: 24, id: '#search-icon'}, '')
                 
                 //- hotel form buttons
                 if (design === 'full')
@@ -124,4 +124,4 @@ mixin search-form(design, flights = 'visible', hotels = 'hidden')
                         button.search-form__add-button(type="button") 
                             +use-svg(16, 16, "#add-icon")
                             | Add Promo Code
-                        +button('Show Places', '', {id: '#send-icon', width: 16, height: 16})
+                        +button('Show Places', '', {width: 16, height: 16, id: '#building-icon'})

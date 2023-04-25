@@ -1,0 +1,11 @@
+.reviews-section {
+    padding-top: 80px;
+}
+
+.reviews-section__cards {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 24px;
+}

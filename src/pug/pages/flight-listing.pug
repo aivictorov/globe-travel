@@ -1,0 +1,45 @@
+extends ./../layouts/listing.pug
+
+block variables 
+    - const title = "GlobeTravel - Flight Listing"
+
+block listing-form
+    +search-form('short', 'visible', 'none') 
+
+block listing-left
+    include ./../blocks/listing-filters.pug 
+        +filter-item('Price')
+            +dual-range()
+
+        +filter-item('Departure Time')
+            +dual-range()
+
+        +filter-item('Rating', 'row')
+            - var items = ['0+', '1+', '2+', '3+', '4+']
+            each item in items 
+                +rating-filter-checkbox(item)
+
+        +filter-item('Airlines')
+            each item in ['Emirated', 'Fly Dubai', 'Qatar', 'Etihad']
+                +checkbox 
+                    | #{item}
+
+        +filter-item('Trips')
+            each item in ['Round trip','On Way','Multi-City','My Dates Are Flexible']
+                +checkbox 
+                    | #{item}
+
+block listing-tabs
+    +tabs(
+        [
+            {title: 'Cheapest', subtitle: '$99, 2h 00m'}, 
+            {title: 'Best', subtitle: '$199, 3h 30m'}, 
+            {title: 'Quickest', subtitle: '$299, 5h 00m'}
+        ]
+    )
+
+block listing-cards
+    +flight-card()
+    +flight-card()
+    +flight-card()
+    

@@ -1,7 +1,10 @@
-//- +header-nav('main')
-//- +header-nav('inner')
+//- +header-nav(
+//-     page = 'main', 
+//-     login = false / true,
+//- )
 
-mixin header-nav(page = 'main', login = true)
+mixin header-nav(page = 'main', login = false)
+
     .header-nav(class= page==='inner' ? 'header-nav--inner-page' : false)
         .header-nav__left
             a.header-nav__item(href="#!")
@@ -12,16 +15,13 @@ mixin header-nav(page = 'main', login = true)
                 | Find stays 
         
         .header-nav__right
-
             if (!login)
                 a.header-nav__item(href="#!")
                     |Login
-                a.header-nav__sign-up(
-                    href="#!", 
-                    class= page==='inner' ? 'header-nav__sign-up--inner-page' : false
-                )
-                    | Sign Up
-
+                if (page==='main')
+                    +button('Sign Up', '104px', '', 'light', 'bold', '')
+                if (page==='inner')
+                    +button('Sign Up', '104px', '', 'dark', 'bold', '')
             else
                 .header-nav__item-wrapper
                     a(href="#!").header-nav__item
@@ -36,14 +36,12 @@ mixin header-nav(page = 'main', login = true)
                     )
                         .header-nav__avatar
                             .header-nav__avatar-image
-                                img(src="./../../img/account/avatar.jpg", alt="user-avatar")
+                                img(src="./img/users/avatars/01.jpg", alt="user-avatar")
                             .header-nav__avatar-button
                                 +use-svg(10, 10, '#arrow-down')
                         | John D.
 
-                    include ./../blocks/user-droplist.pug
+                    include ./../blocks/droplist-user.pug
         
         .header-nav__logo
             +logo(`header-${page}`)
-
-        

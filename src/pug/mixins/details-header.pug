@@ -13,14 +13,9 @@ mixin details-header(title = 'CVK Park Bosphorus Hotel Istanbul', image = '')
             .details-header__right
                 +price('$240', '/night', 'big')
                 .details-header__buttons
-                    +button('', '', {id: '#send-icon', width: 20, height: 20}, 'border', '')
-                    +button('', '', {id: '#send-icon', width: 20, height: 20}, 'border', '')
+                    +fav-button('48px')
+                    +square-button('48px', {width: 20, height: 20, id: '#share'}, 'border')
                     +button('Book now', '150px', '', '', 'bold')
         if (image !== '')
             .details-header__image
-                img(src="./../../img/flights/details-image.jpg", alt= title)
-    
-    
-    
-    
-    
+                img(src="./img/flights/details-header.jpg", alt= title)

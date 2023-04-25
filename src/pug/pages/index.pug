@@ -1,16 +1,15 @@
 extends ./../layouts/main.pug
 
 block variables 
-    - const title = "GlobeTravel - main page"
+    - var title = "GlobeTravel - main page"
+    - var login = true
 
 block content
-
-    include ./../sections/header.pug 
+    +header(login)
 
     main
-
-    include ./../sections/places.pug 
-    include ./../sections/booking.pug 
-    include ./../sections/reviews.pug 
+        include ./../sections/plan-your-trip.pug 
+        include ./../sections/flights-and-hotels.pug 
+        include ./../sections/reviews-section.pug 
 
     include ./../sections/footer.pug

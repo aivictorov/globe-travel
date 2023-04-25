@@ -4,39 +4,39 @@ section.hotel-amenities
     -
         var items = [
             {
-                icon: '',
+                icon: '#food',
                 title: 'Outdoor pool'
             },
             {
-                icon: '',
+                icon: '#wifi',
                 title: 'Fitness center'
             },
             {
-                icon: '',
+                icon: '#seat',
                 title: 'Indoor pool'
             },
             {
-                icon: '',
+                icon: '#food',
                 title: 'Bar/Lounge'
             },
             {
-                icon: '',
+                icon: '#wifi',
                 title: 'Spa and wellness center'
             },
                             {
-                icon: '',
+                icon: '#food',
                 title: 'Free Wi-Fi'
             },
                             {
-                icon: '',
+                icon: '#wifi',
                 title: 'Restaurant'
             },
                             {
-                icon: '',
+                icon: '#wifi',
                 title: 'Tea/coffee machine'
             },
                             {
-                icon: '',
+                icon: '#wifi',
                 title: 'Room service'
             }
         ]
@@ -47,6 +47,7 @@ section.hotel-amenities
         each item in items 
             li.hotel-amenities__item
                 .hotel-amenities__item-icon
+                    +use-svg(24, 24, item.icon)
                 .hotel-amenities__item-title #{item.title}
         li.hotel-amenities__item
             a.hotel-amenities__link(href="#!") +24 more

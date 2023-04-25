@@ -25,8 +25,12 @@
     }
 
     &--border {
-        background-color: #FFF;
+        background-color: transparent;
         border: 1px solid #8DD3BB;
+    }
+
+    &--bold {
+        font-weight: 600;
     }
 
     &--h40 {
@@ -46,7 +50,7 @@
     border-radius: 4px;
 
     &--border {
-        background-color: #FFF;
+        background-color: transparent;
         border: 1px solid #8DD3BB;
     }
 }

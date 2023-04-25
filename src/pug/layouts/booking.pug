@@ -1,8 +1,9 @@
 extends ./main.pug
 
-block content
+block variables
 
-    include ./../sections/header-inner.pug 
+block content
+    +header-inner(login)
 
     main.booking 
         .container

@@ -1,0 +1,6 @@
+mixin flights-and-hotels-card(classname, title, text, buttonText, link)
+    .flights-and-hotels-card(class= "flights-and-hotels-card--" + classname)
+        .flights-and-hotels-card__title #{title}
+        .flights-and-hotels-card__text #{text}
+        .flights-and-hotels-card__button
+            +button(buttonText) 

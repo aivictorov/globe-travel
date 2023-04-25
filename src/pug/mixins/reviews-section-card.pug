@@ -1,0 +1,23 @@
+mixin reviews-section-card(title, text, author, place, img)
+    .reviews-section-card
+        .reviews-section-card__content
+            .reviews-section-card__title #{title}
+            .reviews-section-card__text #{text}
+            .reviews-section-card__details
+                | View more
+        .reviews-section-card__rating
+            .reviews-section-card__stars 
+                - let count = 0;
+                while count < 5
+                    svg(width="24", height="24")
+                        use(href="#star-icon")
+                    - count += 1;
+            .reviews-section-card__author #{author}
+            .reviews-section-card__place #{place}
+            .reviews-section-card__google-link
+                svg(width="24", height="24")
+                    use(href="#google-icon")
+                | Google
+        .reviews-section-card__image
+            img(src="./img/sections/reviews-section/" + img, alt= title)
+

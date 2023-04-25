@@ -1,0 +1,44 @@
+//- +flight-ticket('details')
+
+mixin flight-ticket(page = 'details')
+    .flight-ticket
+
+        if (page === 'booking')
+            .flight-ticket__header
+                .flight-ticket__title 
+                    | Emirates A380 Airbus
+                +price('$240', '/night', 'big')
+
+        .flight-ticket__content
+            .flight-ticket__content-top
+                .flight-ticket__date(
+                    class= page === 'booking' ? 'flight-ticket__date--booking-page' : false
+                )
+                    | Return Wed, Dec 8
+                .flight-ticket__duration
+                    | 2h 28m
+            
+            .flight-ticket__content-middle
+                .flight-ticket__airline
+                    .flight-ticket__airline-logo
+                        img(src="./img/flights/airline-example-1/logo.png", alt="airline-logo")
+                    .flight-ticket__airline-text
+                        span Emirates 
+                        span Airbus A320
+                ul.flight-ticket__service-list
+                    - var items = ['#flight-icon', '#wifi', '#stopwatch', '#food', '#seat']
+                    each item in items
+                        li.flight-ticket__service-item
+                            +use-svg(24, 24, item)
+            
+            .flight-ticket__content-bottom(
+                    class= page === 'booking' ? 'flight-ticket__content-bottom--booking-page' : false
+                )
+                .flight-ticket__time 
+                    span 12:00 pm
+                    span Newark(EWR)
+                .flight-ticket__spacer
+                    +use-svg(48, 48, '#flight-icon')
+                .flight-ticket__time
+                    span 12:00 pm
+                    span Newark(EWR)

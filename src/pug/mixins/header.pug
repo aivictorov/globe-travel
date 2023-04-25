@@ -1,0 +1,17 @@
+//- +header(
+//-     login: false / true
+//- )
+
+mixin header(login = false)
+    header.header
+        .bg-wrapper
+            .header__bg
+                +header-nav('main', login = login)
+                .header__content
+                    .container
+                        .header__subtitle Helping Others
+                        h1.header__title Live & Travel
+                        .header__text Special offers to suit your plan
+        form.header__form-wrapper
+            .container
+                +search-form('full', 'visible', 'hidden')

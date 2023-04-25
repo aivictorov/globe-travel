@@ -3,22 +3,34 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // margin-bottom: 54px;
     padding: 24px 32px;
-    color: #FFF;
-    z-index: 9;
+    z-index: 99;
 
     svg {
         fill: #FFF;
     }
 
+    button.button{
+        border-radius: 8px;
+    }
+
     &--inner-page {
         padding-left: 0;
         padding-right: 0;
-        color: #000;
+
+        a.header-nav__item,
+        .header-nav__item,
+        .header-nav__item-wrapper {
+            color: $black;
+        }
+
+        a.header-nav__sign-up {
+            background-color: $black;
+            color: #FFF;
+        }
 
         svg {
-            fill: #000;
+            fill: $black;
         }
     }
 }
@@ -30,6 +42,7 @@
     column-gap: 32px;
 }
 
+a.header-nav__item,
 .header-nav__item {
     display: flex;
     justify-content: flex-start;
@@ -46,21 +59,7 @@
     justify-content: flex-start;
     align-items: center;
     column-gap: 16px;
-}
-
-a.header-nav__sign-up {
-    padding-left: 24px;
-    padding-right: 24px;
-    height: 48px;
-    line-height: 48px;
-    border-radius: 8px;
-    background-color: #FFF;
-    color: $black;
-
-    &--inner-page {
-        background-color: $black;
-        color: #FFF;
-    }
+    color: #FFF;
 }
 
 .header-nav__avatar {

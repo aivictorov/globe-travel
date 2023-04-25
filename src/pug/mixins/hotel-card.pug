@@ -1,16 +1,16 @@
-//- +flight-card()
+//- +hotel-card(
+//-     'Eresin Hotels Sultanahmet - Boutique Class',
+//-     'hotels/hotel-example-1/cover.jpg'
+//- )
 
-mixin hotel-card()
+mixin hotel-card(title = '', image = '')
     .hotel-card
         .hotel-card__image 
-            img(src="./../../img/hotels/hotel-card.jpg", alt="hotel")
+            img(src="./img/" + image, alt="hotel")
         .hotel-card__content
             .hotel-card__info
                 .hotel-card__info-left 
-                    .hotel-card__title
-                        | Eresin Hotels Sultanahmet - Boutique Class
-                    
-                    
+                    .hotel-card__title #{title}
                     .hotel-card__details 
                         +location('Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437', 'hotel-card')
                         +stars(5)
@@ -22,7 +22,6 @@ mixin hotel-card()
                             .hotel-card__price-notice starting from
                             +price('$240', '/night', '')
                             .hotel-card__price-notice excl. tax
-
 
             .hotel-card__buttons
                 +fav-button

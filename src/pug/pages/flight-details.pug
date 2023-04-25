@@ -1,0 +1,13 @@
+extends ./../layouts/details.pug
+
+block variables 
+    - const title = "GlobeTravel - Flight Details"
+
+block details-header 
+    +details-header('Emirates A380 Airbus', 'image')
+
+block details-flight-content
+    include ./../sections/flight-features.pug
+    include ./../sections/flight-policies.pug
+    +flight-ticket('details')
+    +flight-ticket('details') 

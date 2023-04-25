@@ -1,0 +1,13 @@
+mixin plan-your-trip-card(title, img, link)
+    .plan-your-trip-card
+        .plan-your-trip-card__image
+            img(src="./img/sections/plan-your-trip/" + img, alt= title)
+        .plan-your-trip-card__content
+            .plan-your-trip-card__title #{title}
+            .plan-your-trip-card__links
+                a.plan-your-trip-card__link(href= link) Flights
+                |•
+                a.plan-your-trip-card__link(href= link) Hotels
+                |•
+                a.plan-your-trip-card__link(href= link) Resorts
+

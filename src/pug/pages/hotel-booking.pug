@@ -1,0 +1,26 @@
+extends ./../layouts/booking.pug
+
+block variables 
+    - const title = "GlobeTravel - Hotel Booking"
+
+block booking-left
+    +hotel-reservation()
+    include ./../blocks/booking-payment-methods.pug
+    include ./../blocks/booking-login.pug
+    include ./../blocks/booking-payment-cards.pug
+
+block booking-right
+    +booking-summary(
+        {
+            src: 'hotels/hotel-example-1/cover_small.jpg',
+            alt: 'hotel'
+        },
+        'CVK Park Bosphorus',  
+        'Superior room - 1 double bed or 2 twin beds',  
+        [
+            {title: 'Base Fare', price: '$240'}, 
+            {title: 'Discount', price: '$0'}, 
+            {title: 'Taxes', price: '$20'}, 
+            {title: 'Service Fee', price: '$5'}, 
+        ],    
+    )

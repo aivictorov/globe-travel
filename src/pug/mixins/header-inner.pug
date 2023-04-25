@@ -1,0 +1,8 @@
+//- +header-inner(
+//-     login = false / true
+//- )
+
+mixin header-inner(login = false)
+    header.header-inner
+        .container
+            +header-nav('inner', login = login)

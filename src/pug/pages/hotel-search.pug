@@ -1,0 +1,24 @@
+extends ./../layouts/main.pug
+
+block variables 
+    - const title = "GlobeTravel - Hotel Search"
+
+block content 
+    +header-inner(false)
+
+    main
+        +slider-inner(
+            'Make your travel whishlist, we’ll do the rest', 
+            'Special offers to suit your plan'
+        )
+            block slider-inner-background
+                img(src="./img/hotels/header.jpg", alt="hotels")
+            
+            block slider-inner-form
+                +search-form('full', 'none', 'visible')
+
+        include ./../sections/recent-searches.pug 
+        include ./../sections/fall-into-travel.pug 
+        include ./../sections/last-minute-tours.pug 
+                        
+    include ./../sections/footer.pug 

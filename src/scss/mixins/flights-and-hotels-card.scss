@@ -1,0 +1,38 @@
+.flights-and-hotels-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 27px;
+    width: calc((100% - 24px) / 2);
+    height: 559px;
+    border-radius: 20px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &--flights {
+        background-image: url('./../img/sections/flights-and-hotels/flights.jpg');
+    }
+
+    &--hotels {
+        background-image: url('./../img/sections/flights-and-hotels/hotels.jpg');
+    }
+}
+
+.flights-and-hotels-card__title {
+    margin-bottom: 8px;
+    // font-family: 'Trade Gothic LT Std';
+    font-weight: 700;
+    font-size: 40px;
+    color: #FFF;
+}
+
+.flights-and-hotels-card__text {
+    margin-bottom: 16px;
+    max-width: 390px;
+    text-align: center;
+    font-size: 16px;
+    color: #FFF;
+}

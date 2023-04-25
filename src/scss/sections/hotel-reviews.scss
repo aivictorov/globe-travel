@@ -66,7 +66,11 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: $main;
+    overflow: hidden;
+
+    img{
+        @include image-fit(cover);
+    }
 }
 
 .hotel-reviews__item-content {
@@ -91,7 +95,6 @@
     flex-shrink: 0;
     width: 20px;
     height: 20px;
-    background-color: $main;
 }
 
 .hotel-reviews__pagination {
@@ -103,6 +106,5 @@
     span {
         width: 24px;
         height: 24px;
-        background-color: $main;
     }
 }

@@ -5,15 +5,15 @@ section.flight-policies
         -
             var items = [
                 {
-                    icon: '',
+                    icon: '#stopwatch',
                     title: 'Pre-flight cleaning, installation of cabin HEPA filters.'
                 },
                 {
-                    icon: '',
+                    icon: '#stopwatch',
                     title: 'Pre-flight health screening questions.'
                 },
                 {
-                    icon: '',
+                    icon: '#stopwatch',
                     title: 'Pre-flight health screening questions.'
                 },
             ]
@@ -22,4 +22,5 @@ section.flight-policies
             each item in items 
                 li.flight-policies__item
                     .flight-policies__item-icon
+                        +use-svg(24, 24, item.icon)
                     .flight-policies__item-title #{item.title}

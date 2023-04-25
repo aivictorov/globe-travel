@@ -1,6 +1,10 @@
 .sign-up {
     padding-top: 104px;
     padding-bottom: 104px;
+
+    .input__label {
+        background-color: $background;
+    }
 }
 
 .sign-up__row {
@@ -14,10 +18,16 @@
     width: 488px;
 }
 
+.sign-up__right {
+    width: 640px;
+}
+
 .sign-up__logo {
     margin-bottom: 64px;
 }
 
-.sign-up__right {
-    width: 640px;
+.sign-up__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
 }

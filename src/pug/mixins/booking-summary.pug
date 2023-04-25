@@ -1,37 +1,37 @@
-//- +booking-summary()
+//- +booking-summary(
+//-     {
+//-         src: 'hotels/hotel-example-1/cover_small.jpg',
+//-         alt: 'hotel'
+//-     },
+//-     'CVK Park Bosphorus',  
+//-     'Superior room - 1 double bed or 2 twin beds',  
+//-      [
+//-         {title: 'Base Fare', price: '$240'}, 
+//-         {title: 'Discount', price: '$0'}, 
+//-         {title: 'Taxes', price: '$20'}, 
+//-         {title: 'Service Fee', price: '$5'}, 
+//-     ],    
+//- )
 
-mixin booking-summary()
+mixin booking-summary(image = '', subtitle = 'CVK Park Bosphorus', title = 'Superior room - 1 double bed or 2 twin beds', priceDetails = '')
     .booking-summary
         .booking-summary__object
             .booking-summary__object-image 
-                img(src="./../../img/hotels/hotel.jpg", alt="hotel")
+                img(src="./../../img/" + image.src, alt="hotel")
             .booking-summary__object-info 
                 .booking-summary__object-header 
-                    .booking-summary__object-title 
-                        | CVK Park Bosphorus
-                    .booking-summary__object-subtitle
-                        | Superior room - 1 double bed or 2 twin beds
+                    .booking-summary__object-title #{subtitle}
+                    .booking-summary__object-subtitle #{title}
                 +rating('4.2', 'Very good', {text: '54 reviews', link: '#!'})
         .booking-summary__protected
             | Your booking is protected by #[strong golobe]
         .booking-summary__details
             .booking-summary__title
                 | Price Details
-            -
-                var items = 
-                [
-                    {title: 'Base Fare', price: '$240'}, 
-                    {title: 'Discount', price: '$0'}, 
-                    {title: 'Taxes', price: '$20'}, 
-                    {title: 'Service Fee', price: '$5'}, 
-
-                ]
-            each item in items 
+            each item in priceDetails 
                 .booking-summary__item
                     span #{item.title}
                     span #{item.price}
         .booking-summary__total
             span Total 
             span $265
-
-

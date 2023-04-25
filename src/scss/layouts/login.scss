@@ -1,6 +1,10 @@
 .login {
     padding-top: 104px;
     padding-bottom: 104px;
+
+    .input__label {
+        background-color: $background;
+    }
 }
 
 .login__row {

@@ -72,7 +72,7 @@ section.account-tabs(tabs="account")
                 )
                     - let i = 0
                     while (i < 4)
-                        +account-booking-card()
+                        +account-booking-card('flight')
                         - i++
 
                 .account-bookings__content(
@@ -81,7 +81,7 @@ section.account-tabs(tabs="account")
                 )
                     - let g = 0
                     while (g < 1)
-                        +account-booking-card()
+                        +account-booking-card('hotel')
                         - g++
         
         .account-tabs__content(

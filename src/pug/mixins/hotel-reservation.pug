@@ -1,0 +1,28 @@
+//- +hotel-reservation()
+
+mixin hotel-reservation()
+    .hotel-reservation 
+        
+        .hotel-reservation__top 
+            .hotel-reservation__title 
+                | Superior room - 1 double bed or 2 twin beds
+            +price('$240', '/night', 'big')
+        
+        .hotel-reservation__middle 
+            .hotel-reservation__image
+                img(src="./img/hotels/hotel-example-1/logo.jpg", alt="hotel-logo")
+            .hotel-reservation__about
+                .hotel-reservation__about-title
+                    | CVK Park Bosphorus Hotel Istanbul
+                .hotel-reservation__about-adress
+                    | Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437
+        
+        .hotel-reservation__bottom
+            .hotel-reservation__begin 
+                span Thursday, Dec 8
+                span Check-In
+            .hotel-reservation__spacer
+                +use-svg(48, 48, '#hotel-icon')
+            .hotel-reservation__end 
+                span Friday, Dec 9
+                span Check-Out
