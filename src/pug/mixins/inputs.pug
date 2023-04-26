@@ -1,17 +1,22 @@
 //- +input('From - To', 'Lahore - Karachi', '340px', {id: '#swap-icon', width: 24, height: 24})
 
-mixin input(label, value, width = '', icon = '')
+mixin input(label, value, width = '', icon = '', attribute = '')
     .input(style= width != '' ? `width: ${width};` : false)
-        .input__label #{label}
         input.input__field(
             class= classname, 
             type="text",
             value= value, 
         )
+        
+        .input__label #{label}
+        
         if icon
-            .input__icon
+            button.input__icon(
+                type='button',
+                data-button= attribute !== '' ? attribute : false
+            )
                 svg(
                     width= icon.width, 
                     height= icon.height
                 )
-                    use(href= icon.id)
+                    use(href= icon.id) 

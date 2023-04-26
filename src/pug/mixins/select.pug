@@ -3,9 +3,11 @@
 mixin select(label, values, width = '', icon = '')
 
     .select(style= width != '' ? `width: ${width};` : false)
-        .select__label #{label}
         button.select__button(type='button') 
             | #{values[0]}
+        
+        .select__label #{label}
+
         if icon
             .select__icon
                 svg(
@@ -13,7 +15,9 @@ mixin select(label, values, width = '', icon = '')
                     height= icon.height
                 )
                     use(href= icon.id)
+        
         ul.select__list
             each value in values
                 li(data-value= value) #{value}
+       
         input.select__input-hidden(type='text' name='select-category' value='')

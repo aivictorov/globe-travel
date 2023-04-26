@@ -6,7 +6,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	selects();
 	tabs();
 	accordeons();
-	// reviewsSectionCarousel();
+	reviewsCarousel();
+	swap();
 });
 
 function dropdowns() {
@@ -127,11 +128,20 @@ function selects() {
 		const selectList = select.querySelector('.select__list');
 		const selectListItems = select.querySelectorAll('.select__list li');
 		const selectInputHidden = select.querySelector('.select__input-hidden');
+		const selectIcon = select.querySelector('.select__icon');
 
 		selectButton.addEventListener('click', (event) => {
 			event.preventDefault();
 			selectList.classList.toggle('visible');
 			selectButton.classList.toggle('active');
+			selectIcon && selectIcon.classList.toggle('active');
+		});
+
+		selectIcon.addEventListener('click', (event) => {
+			event.stopPropagation();
+			selectList.classList.toggle('visible');
+			selectButton.classList.toggle('active');
+			selectIcon && selectIcon.classList.toggle('active');
 		});
 
 		selectListItems.forEach((item) => {
@@ -140,6 +150,7 @@ function selects() {
 				selectInputHidden.value = item.dataset.value;
 				selectList.classList.remove('visible');
 				selectButton.classList.remove('active');
+				selectIcon && selectIcon.classList.remove('active');
 				selectButton.focus();
 				event.stopPropagation();
 			});
@@ -149,6 +160,7 @@ function selects() {
 			if (event.target !== selectButton) {
 				selectList.classList.remove('visible');
 				selectButton.classList.remove('active');
+				selectIcon && selectIcon.classList.remove('active');
 			};
 		});
 
@@ -156,6 +168,7 @@ function selects() {
 			if (event.key === 'Tab' || event.key === 'Escape') {
 				selectList.classList.remove('visible');
 				selectButton.classList.remove('active');
+				selectIcon && selectIcon.classList.remove('active');
 				selectButton.blur();
 			};
 		});
@@ -194,10 +207,8 @@ function accordeons() {
 	});
 };
 
-function reviewsSectionCarousel() {
+function reviewsCarousel() {
 	const owl = $(".reviews-section .owl-carousel");
-	// const btnPrev = $(".clients .slider__btn-prev");
-	// const btnNext = $(".clients .slider__btn-next");
 
 	owl.owlCarousel(
 		{
@@ -205,13 +216,20 @@ function reviewsSectionCarousel() {
 			items: 3,
 			nav: false,
 			dots: false,
-			margin: 50,
-			autoplay: false,
+			autoplay: true,
 			autoplayTimeout: 5000,
 			autoplayHoverPause: true,
+			smartSpeed: 2500,
 		}
 	);
-
-	// btnPrev.click(() => owl.trigger('prev.owl.carousel'));
-	// btnNext.click(() => owl.trigger('next.owl.carousel'));
 };
+
+function swap() {
+	document.querySelectorAll('[data-button="swap-button"]').forEach((button) => {
+		button.addEventListener('click', () => {
+			const input = button.closest('.input').querySelector('input');
+			const arr = input.value.split(' - ').reverse();
+			input.value = arr[0] + ' - ' + arr[1];
+		})
+	});
+}

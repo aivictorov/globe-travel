@@ -49,7 +49,8 @@ mixin search-form(design, flights = 'visible', hotels = 'hidden')
                         'From - To', 
                         'Lahore - Karachi', 
                         inputWidth, 
-                        {id: '#swap-icon', width: 24, height: 24}
+                        {id: '#swap-icon', width: 24, height: 24},
+                        'swap-button'
                     )
                     +select(
                         'Trip', 
@@ -102,13 +103,13 @@ mixin search-form(design, flights = 'visible', hotels = 'hidden')
                         'Check In', 
                         'Fri 12/2', 
                         '240px', 
-                        {id: '#arrow-down', width: 24, height: 24}
+                        {id: '#calendar-icon', width: 24, height: 24}
                     )
                     +input(
                         'Check Out', 
                         'Sun 12/4', 
                         '240px', 
-                        {id: '#arrow-down', width: 24, height: 24}
+                        {id: '#calendar-icon', width: 24, height: 24}
                     )
                     +input(
                         'Rooms & Guests', 

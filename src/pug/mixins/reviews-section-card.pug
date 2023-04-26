@@ -3,7 +3,7 @@ mixin reviews-section-card(title, text, author, place, img)
         .reviews-section-card__content
             .reviews-section-card__title #{title}
             .reviews-section-card__text #{text}
-            .reviews-section-card__details
+            a(href="#!").reviews-section-card__link
                 | View more
         .reviews-section-card__rating
             .reviews-section-card__stars 

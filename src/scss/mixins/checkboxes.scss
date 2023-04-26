@@ -21,6 +21,15 @@
         .checkbox__custom+.checkbox__value {
             margin-left: 12px;
         }
+
+        .checkbox__hidden {
+            &:checked {
+                &+.checkbox__custom {
+                    border: 2px solid $main;
+                    background-color: $main;
+                }
+            }
+        }
     }
 }
 

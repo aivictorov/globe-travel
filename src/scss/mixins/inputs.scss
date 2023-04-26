@@ -2,16 +2,6 @@
     position: relative;
 }
 
-.input__label {
-    position: absolute;
-    left: 12px;
-    top: 0;
-    padding-left: 4px;
-    padding-right: 4px;
-    background-color: #FFF;
-    transform: translateY(-50%);
-}
-
 .input__field {
     padding: 18px 48px 18px 16px;
     width: 100%;
@@ -23,6 +13,24 @@
     &::placeholder {
         font-size: 16px;
     }
+
+    &:focus {
+        border: 1px solid $main;
+
+        &+.input__label {
+            color: $main;
+        }
+    }
+}
+
+.input__label {
+    position: absolute;
+    left: 12px;
+    top: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: #FFF;
+    transform: translateY(-50%);
 }
 
 .input__icon {
@@ -31,3 +39,4 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
