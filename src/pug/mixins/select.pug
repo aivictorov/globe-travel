@@ -1,0 +1,19 @@
+//- +select('From - To', 'Lahore - Karachi', '340px', {id: '#swap-icon', width: 24, height: 24})
+
+mixin select(label, values, width = '', icon = '')
+
+    .select(style= width != '' ? `width: ${width};` : false)
+        .select__label #{label}
+        button.select__button(type='button') 
+            | #{values[0]}
+        if icon
+            .select__icon
+                svg(
+                    width= icon.width, 
+                    height= icon.height
+                )
+                    use(href= icon.id)
+        ul.select__list
+            each value in values
+                li(data-value= value) #{value}
+        input.select__input-hidden(type='text' name='select-category' value='')

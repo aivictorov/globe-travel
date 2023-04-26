@@ -22,7 +22,8 @@ html(lang="en")
         link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap' rel='stylesheet')
 
         //- Styles
-        link(rel='stylesheet' href='/css/main.css')
+        link(rel='stylesheet' href='./libs/owl-carousel-2/owl.carousel.min.css')
+        link(rel='stylesheet' href='./css/main.css')
 
         //- Open Graph
         //- <meta property="og:url" content="https://webcademy.ru/" />
@@ -45,9 +46,16 @@ html(lang="en")
     body
         include ./../utils/svg-icons.pug
         include ./../utils/mixins.pug
-        include ./../utils/project-nav-button.pug 
-        include ./../utils/project-nav-modal.pug 
+        
+        +project-nav(animated)
 
         block content
 
-        script(src="/js/main.js")
+        //- jQuery lib
+        script(src='./libs/jquery/jquery-3.6.4.min.js')
+
+        //- owl-carousel2
+        script(src='./libs/owl-carousel-2/owl.carousel.min.js')
+
+        //- Custom scripts
+        script(src='./js/main.js')

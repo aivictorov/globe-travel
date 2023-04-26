@@ -51,9 +51,9 @@ mixin search-form(design, flights = 'visible', hotels = 'hidden')
                         inputWidth, 
                         {id: '#swap-icon', width: 24, height: 24}
                     )
-                    +input(
+                    +select(
                         'Trip', 
-                        'Return', 
+                        ['Return', 'Single'], 
                         '140px', 
                         {id: '#arrow-down', width: 24, height: 24}
                     )

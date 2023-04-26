@@ -21,6 +21,15 @@
     color: $black;
 }
 
+.filter-item__button {
+    width: 24px;
+    height: 24px;
+
+    &.active{
+        transform: rotate(180deg);
+    }
+}
+
 .filter-item__content {
     display: flex;
 

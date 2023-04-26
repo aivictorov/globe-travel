@@ -2,13 +2,13 @@ extends ./../layouts/booking.pug
 
 block variables 
     - var title = "GlobeTravel - Hotel Booking"
-    - var login = false
+    - var login = true
 
 block booking-left
     +hotel-reservation()
     include ./../blocks/booking-payment-methods.pug
-    include ./../blocks/booking-login.pug
-    //- include ./../blocks/booking-payment-cards.pug
+    //- include ./../blocks/booking-login.pug
+    include ./../blocks/booking-payment-cards.pug
 
 block booking-right
     +booking-summary(

@@ -1,13 +1,14 @@
 extends ./../layouts/booking.pug
 
 block variables 
-    - const title = "GlobeTravel - Flight Booking" 
+    - var title = "GlobeTravel - Flight Booking" 
+    - var login = false
 
 block booking-left
     +flight-ticket('booking')
     include ./../blocks/booking-payment-methods.pug
     include ./../blocks/booking-login.pug
-    include ./../blocks/booking-payment-cards.pug
+    //- include ./../blocks/booking-payment-cards.pug
 
 block booking-right
     +booking-summary(

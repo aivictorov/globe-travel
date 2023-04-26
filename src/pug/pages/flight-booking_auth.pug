@@ -1,23 +1,23 @@
 extends ./../layouts/booking.pug
 
 block variables 
-    - var title = "GlobeTravel - Hotel Booking"
-    - var login = false
+    - var title = "GlobeTravel - Flight Booking" 
+    - var login = true
 
 block booking-left
-    +hotel-reservation()
+    +flight-ticket('booking')
     include ./../blocks/booking-payment-methods.pug
-    include ./../blocks/booking-login.pug
-    //- include ./../blocks/booking-payment-cards.pug
+    //- include ./../blocks/booking-login.pug
+    include ./../blocks/booking-payment-cards.pug
 
 block booking-right
     +booking-summary(
         {
-            src: 'hotels/hotel-example-1/cover_small.jpg',
-            alt: 'hotel'
+            src: 'flights/airline-example-1/logo-image.jpg',
+            alt: 'flight'
         },
-        'CVK Park Bosphorus',  
-        'Superior room - 1 double bed or 2 twin beds',  
+        'Economy',   
+        'Emirates A380 Airbus',  
         [
             {title: 'Base Fare', price: '$240'}, 
             {title: 'Discount', price: '$0'}, 

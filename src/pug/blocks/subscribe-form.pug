@@ -8,6 +8,6 @@ form.subscribe-form
             | Get inspired! Receive travel discounts, tips and behind the scenes stories.
         .subscribe-form__row
             input.subscribe-form__input(type="text" value="Your email address") 
-            button.subscribe-form__button(type="button") Subscribe
+            +subscribe-button("Subscribe") 
     .subscribe-form__image
         img(src="./../../img/footer/mailbox.svg", alt="mailbox")

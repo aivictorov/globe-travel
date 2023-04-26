@@ -3,8 +3,10 @@ window.addEventListener('DOMContentLoaded', () => {
 	alignModalWindows();
 	dropdowns()
 	dualRangeInputs();
+	selects();
 	tabs();
-	// carousel();
+	accordeons();
+	// reviewsSectionCarousel();
 });
 
 function dropdowns() {
@@ -37,7 +39,7 @@ function modalWindows() {
 		const modal = document.querySelector(`div[modal-window="${button.getAttribute('modal-button')}"]`);
 
 		if (modal) {
-			const content = modal.querySelector('.modal__content');
+			const content = modal.querySelector('[modal-content]');
 
 			button.addEventListener('click', () => {
 				modal.classList.add('active');
@@ -61,8 +63,8 @@ function alignModalWindows() {
 	window.addEventListener('resize', align);
 
 	function align() {
-		document.querySelectorAll('div[modal-window]').forEach((modal) => {
-			const content = modal.querySelector('.modal__content');
+		document.querySelectorAll('[modal-window]').forEach((modal) => {
+			const content = modal.querySelector('[modal-content]');
 			if (content.clientHeight <= window.innerHeight - 80) {
 				content.classList.add('center');
 			} else {
@@ -119,6 +121,47 @@ function dualRangeInputs() {
 	})
 };
 
+function selects() {
+	document.querySelectorAll('.select').forEach(function (select) {
+		const selectButton = select.querySelector('.select__button');
+		const selectList = select.querySelector('.select__list');
+		const selectListItems = select.querySelectorAll('.select__list li');
+		const selectInputHidden = select.querySelector('.select__input-hidden');
+
+		selectButton.addEventListener('click', (event) => {
+			event.preventDefault();
+			selectList.classList.toggle('visible');
+			selectButton.classList.toggle('active');
+		});
+
+		selectListItems.forEach((item) => {
+			item.addEventListener('click', (event) => {
+				selectButton.innerText = item.innerText;
+				selectInputHidden.value = item.dataset.value;
+				selectList.classList.remove('visible');
+				selectButton.classList.remove('active');
+				selectButton.focus();
+				event.stopPropagation();
+			});
+		});
+
+		document.addEventListener('click', (event) => {
+			if (event.target !== selectButton) {
+				selectList.classList.remove('visible');
+				selectButton.classList.remove('active');
+			};
+		});
+
+		document.addEventListener('keydown', (event) => {
+			if (event.key === 'Tab' || event.key === 'Escape') {
+				selectList.classList.remove('visible');
+				selectButton.classList.remove('active');
+				selectButton.blur();
+			};
+		});
+	});
+};
+
 function tabs() {
 	document.querySelectorAll('[tabs]').forEach((tabs) => {
 		const tabButtons = tabs.querySelectorAll(`[tab-button][tab-group=${tabs.getAttribute('tabs')}]`);
@@ -130,7 +173,7 @@ function tabs() {
 				});
 
 				tabButton.classList.add('active');
-				
+
 				tabs.querySelectorAll(`[tab-content][tab-group=${tabs.getAttribute('tabs')}]`).forEach((tabContent) => {
 					tabContent.classList.add('none');
 					tabs.querySelector(`[tab-content="${tabButton.getAttribute('tab-button')}"]`).classList.remove('none');
@@ -140,34 +183,35 @@ function tabs() {
 	});
 };
 
-// function carousel() {
-// 	const owl = $(".clients .owl-carousel");
-// 	const btnPrev = $(".clients .slider__btn-prev");
-// 	const btnNext = $(".clients .slider__btn-next");
+function accordeons() {
+	document.querySelectorAll('[accordeon-button]').forEach((button) => {
+		button.addEventListener('click', () => {
+			button.classList.toggle('active')
 
-// 	owl.owlCarousel(
-// 		{
-// 			loop: true,
-// 			items: 6,
-// 			nav: false,
-// 			dots: false,
-// 			responsive: {
-// 				0: {
-// 					items: 2,
-// 				},
-// 				600: {
-// 					items: 3,
-// 				},
-// 				900: {
-// 					items: 4,
-// 				},
-// 				1200: {
-// 					items: 6,
-// 				}
-// 			}
-// 		}
-// 	);
+			const content = document.querySelector(`[accordeon-content="${button.getAttribute('accordeon-button')}"]`);
+			content.classList.toggle('none');
+		});
+	});
+};
 
-// 	btnPrev.click(() => owl.trigger('prev.owl.carousel'));
-// 	btnNext.click(() => owl.trigger('next.owl.carousel'));
-// };
+function reviewsSectionCarousel() {
+	const owl = $(".reviews-section .owl-carousel");
+	// const btnPrev = $(".clients .slider__btn-prev");
+	// const btnNext = $(".clients .slider__btn-next");
+
+	owl.owlCarousel(
+		{
+			loop: true,
+			items: 3,
+			nav: false,
+			dots: false,
+			margin: 50,
+			autoplay: false,
+			autoplayTimeout: 5000,
+			autoplayHoverPause: true,
+		}
+	);
+
+	// btnPrev.click(() => owl.trigger('prev.owl.carousel'));
+	// btnNext.click(() => owl.trigger('next.owl.carousel'));
+};

@@ -1,0 +1,141 @@
+.project-nav-button {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    column-gap: 8px;
+    font-size: 16px;
+    position: fixed;
+    left: 0;
+    top: 127px;
+    padding: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #000;
+    color: #000;
+    opacity: 0.8;
+    z-index: 999;
+    transform: translateX(-87.5%);
+    transition: transform .3s ease-in, color 0s linear 0.3s;
+
+    span {
+        max-width: 100px;
+    }
+
+    &:hover {
+        color: #FFF;
+        transform: translateX(0);
+    }
+
+    &--animated {
+        animation: mymove 5s 1;
+        animation-delay: 1s;
+
+        @keyframes mymove {
+            from {
+                color: #000;
+                background-color: #000;
+                transform: translateX(-87.5%);
+            }
+
+            25% {
+                color: #FFF;
+                background-color: red;
+                transform: translateX(0);
+            }
+
+            75% {
+                color: #FFF;
+                background-color: red;
+                transform: translateX(0);
+            }
+
+            to {
+                color: #000;
+                background-color: #000;
+                transform: translateX(-87.5%);
+            }
+        }
+    }
+}
+
+.project-nav-modal {
+    position: fixed;
+    top: -1000%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    overflow-y: auto;
+    z-index: 9999;
+    cursor: pointer;
+    transition: opacity .2s ease-in;
+
+    &.active {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.project-nav-modal__content {
+    margin: 0 auto;
+    padding: 64px;
+    width: 900px;
+    border-radius: 12px;
+    background-color: #FFF;
+    cursor: default;
+
+    &.center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.project-nav-modal__title {
+    margin-bottom: 32px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.project-nav-modal__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    row-gap: 24px;
+    column-gap: 80px;
+    max-height: 200px;
+    font-weight: 500;
+    font-size: 16px;
+
+    li {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;  
+    }
+}
+
+.project-nav-modal__list-title {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.project-nav-modal__notice {
+    margin-top: 16px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.project-nav-modal__close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    svg {
+        stroke: #FFF;
+        transform: rotate(45deg);
+    }
+}

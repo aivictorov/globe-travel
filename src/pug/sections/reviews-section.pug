@@ -6,7 +6,9 @@ section.reviews-section
             'See All'
         )
     .container-right    
-        .reviews-section__cards 
+        .reviews-section__cards(
+            class="owl-carousel owl-theme"
+        )
             +reviews-section-card(
                 '“A real sense of community, nurtured”', 
                 'Really appreciate the help and support from the staff during these tough times. Shoutout to Katie for...',

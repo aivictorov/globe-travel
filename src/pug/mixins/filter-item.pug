@@ -4,9 +4,13 @@ mixin filter-item(title, direction = 'column')
     .filter-item
         .filter-item__header
             h4.filter-item__title #{title}
-            svg(width="24", height="24")
-                use(href="#arrow-down")
+            button.filter-item__button(
+                type='button',
+                accordeon-button= title
+            )
+                +use-svg(24, 24, '#arrow-down')
         .filter-item__content(
             class='filter-item__content--' + direction
+            accordeon-content= title
         )
             block

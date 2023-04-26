@@ -54,6 +54,7 @@
 @import './mixins/reviews-section-card';
 @import './mixins/search-form';
 @import './mixins/section-header'; 
+@import './mixins/select'; 
 @import './mixins/slider-inner';
 @import './mixins/stars';
 @import './mixins/tabs';
@@ -79,5 +80,4 @@
 @import './sections/reviews-section';
 
 // Utils
-@import './utils/project-nav-button';
-@import './utils/project-nav-modal';
+@import './utils/project-nav'; 
